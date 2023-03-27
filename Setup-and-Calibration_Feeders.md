@@ -54,9 +54,9 @@ Here is a short description of the feeder types supported by OpenPnP:
 
   See [[Rapid-Feeder]]'s page for more information and help.
 
-* **Index Feeder**: The open source, powered feeder design as part of the Index PnP project.
+* **Photon Feeder**: The open source, powered feeder design as part of the LumenPnP project.
 
-  See [[Index-Feeder]]'s page for more information.
+  See [[Photon-Feeder]]'s page for more information.
 
 ## Adding a Feeder
 Let's add a Strip Feeder to the machine so that we can test the feeder system.
