@@ -113,12 +113,11 @@ Core to the working of Bottom Vision is the [[CvPipeline]]. The pipeline describ
 
 To configure Bottom Vision visit Machine Setup -> Vision -> Bottom Vision.
 
-
-![Bottom Vision General Settings](https://user-images.githubusercontent.com/9963310/115859927-13f35900-a431-11eb-8a20-85638ebad74a.png)
+![Bottom Vision General Settings](https://user-images.githubusercontent.com/9963310/228593283-60dfbf44-5674-481c-ad13-94628dc234d7.png)
 
 **Enabled?**: Switches on bottom vision.
 
-**Pipeline**: Press the `Edit` button to view and edit the default pipeline that will be used to locate parts. The default pipeline is used when no part specific pipeline has been configured. The built-in pipeline is described below. Press `Reset to Default` to reset the pipeline to the OpenPnP default. Press `Reset All Parts` to assign the current pipeline to all parts. 
+**Bottom Vision Settings**: Select the Vision Settings you want as the global default. 
 
 **Rotate parts prior to vision?**: Will already pre-rotate the part on the nozzle to its final placement angle. This generally improves precision. This option also enables adaptive multi-pass vision. The option is **mandatory** for nozzles that have limited articulation (i.e. less than 360°). It should also be enabled when the **PlacementAngle** optimization **Rotation Mode** is set on the nozzle. See [[Nozzle Rotation Mode]].
 
@@ -136,10 +135,7 @@ In order to further improve precision, the part is then centered in the camera v
 
 ![Offsets Explained](https://user-images.githubusercontent.com/9963310/115862405-67b37180-a434-11eb-96ff-1f22ec1c9b0b.png)
 
-You will probably need to customize the pipeline a bit for your machine. See the [Tips](#tips) section below. There is likely to be a lot of discussion and learning happening on [the mailing list](http://groups.google.com/group/openpnp). That should be your first stop for help.
-
 # Part Configuration
-
 ___
 NOTE: the following is quite outdated, not taking into account the new system of **Vision Settings** or **Exposed Pipeline Parameters**.
 
