@@ -27,7 +27,7 @@ As a further prerequisite, you also need to configure settings on each nozzle ti
 
 **Max. Part Diameter** sets the maximum part dimensions (diagonal) assumed to be picked with this nozzle tip. This diameter is used to limit the image area that is taken into consideration. This is also effective as a circular black mask (using MaskCircle). If your camera view has background elements in the periphery that are disruptive to computer vision (there is often some glare), this is a way to cut it off.
 
-**Maximum Pick Tolerance** sets the maximum allowed distance of the detected part, from its expected location. If it is larger than the given distance, an error will be thrown. This also controls the vision process, by limiting the maximum search distance. Side note: It is also important if you use [[Vision Compositing]] a.k.a. Multi-Shot bottom vision for parts that are larger than the camera view (as explained there).
+**Maximum Pick Tolerance** sets the maximum allowed distance of the detected part, from its expected location. If it is larger than the given distance, an error will be thrown. This also controls the vision process, by limiting the maximum search distance.
 
 # Using the Stock Vision Settings
 
@@ -79,7 +79,22 @@ Using these parameters you should get your bottom vision going in almost all cas
 
 Use the **Test Aligment** button again, it should now iteratively center and align the part. The iterative process is controlled by some settings in the [Global Configuration](#global-configuration) explained further below.
 
-If the stock bottom vision and tweaking the parameters does not work for you, we developers are interested to understand why, and ask you to contribute your images to the [discussion group](http://groups.google.com/group/openpnp). To do so, double click your camera view and go to your `$HOME/.openpnp2/snapshots` directory, where the camera image was saved (see the [FAQ](https://github.com/openpnp/openpnp/wiki/FAQ#where-are-configuration-and-log-files-located) for where that directory is on your computer).
+## Parts Too Big For Camera?
+
+[[Vision Compositing]] a.k.a. Multi-Shot Bottom Vision can help for parts that are larger than the camera view. Or for other problematic/non-rectangular parts.
+
+## Troubleshooting
+
+If the stock bottom vision and tweaking the parameters does not work for you, here are a few ideas:
+
+- Double-check the [Preparations](#preparations) section above.
+- Check if [[Camera Settling]] is configured right.
+- Check if [[Nozzle Tip Background Calibration]] was configured right, and is up to date. 
+- Perhaps watch this video for a way to let Issues & Solutions help you:
+  
+  [OpenPnP: Issues & Solutions New Machine Setup Guidance](https://youtu.be/Pxg6g3KI5_E)
+ 
+If all this fails, we developers are interested to understand why your case fails, and ask you to contribute your images to the [discussion group](http://groups.google.com/group/openpnp). To do so, double click your camera view and go to your `$HOME/.openpnp2/snapshots` directory, where the camera image was saved (see the [FAQ](https://github.com/openpnp/openpnp/wiki/FAQ#where-are-configuration-and-log-files-located) for where that directory is on your computer).
 
 ## Make it the new Default
 
