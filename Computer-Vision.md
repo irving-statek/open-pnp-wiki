@@ -33,6 +33,8 @@ OpenPnP ships with stock pipelines that you can use or adapt to your liking. Whe
 
    ![Paste](https://user-images.githubusercontent.com/9963310/155850406-c1472eb0-fc2f-4e40-a95d-86ece65547e5.png)
 
+## Make Stock Vision The Default
+
 If you want to use the Stock pipeline as your new default:
 
 1. You can also _directly_ set the new Stock pipeline on the "Default Machine Bottom Vision" settings by pressing the **Reset** button:
