@@ -37,10 +37,17 @@ OpenPnP ships with stock pipelines that you can use or adapt to your liking. Whe
 
 If you want to use the Stock pipeline as your new default:
 
-1. You can also _directly_ set the new Stock pipeline on the "Default Machine Bottom Vision" settings by pressing the **Reset** button:
+Go to the "- Default Machine Bottom Vision -" settings and press the **Reset** button:
 
-   ![Reset Default to Stock](https://user-images.githubusercontent.com/9963310/155850750-a665e245-c96a-4dd5-a4d7-4b8a0604ac4c.png)
-    
+![Reset Default to Stock](https://user-images.githubusercontent.com/9963310/155850750-a665e245-c96a-4dd5-a4d7-4b8a0604ac4c.png)
+
+This assumes you have the "- Default Machine Bottom Vision -" settings selected in your Machine Setup / Vision / Bottom Vision settings:
+
+![image](https://user-images.githubusercontent.com/9963310/228471211-67256666-cc36-45cc-8f75-d3b656bab120.png)
+
+Furthermore, if you have different Vision Settings assigned to parts or packages, these will override the default. So if you want the default to generally apply you need to _unselect_ these on the parts / packages, i.e. choose the empty entry. 
+
+![Unselect Vision Settings](https://user-images.githubusercontent.com/9963310/228472278-6b140b5b-dfc8-4577-a230-2ced379b1e51.png)
 
 # Tweaking Pipeline Parameters
 
