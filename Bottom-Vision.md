@@ -40,19 +40,24 @@ NOTE: If your configurations comes from an older version of OpenPnP, chances are
 The following will show you how to select and use them, step by step.
 
 
-## Trying Stock Vision Setting
+## Select Stock Vision Setting
 
-The first step is to try it out with a specific part that you have available for testing. Go to the **Parts** tab, select that part in the list. Go to the Bottom Vision Settings wizard (lower tab). Then press the **Specialize for XXX** button to make this trial special for the part (and not affect other parts and packages).
-
-![Specialize for Part](https://user-images.githubusercontent.com/9963310/228461736-b28dbd8c-2756-4794-9be8-e27765675090.png)
+The first step is to try it out with a specific part that you have available for testing. Go to the **Parts** tab, select that part in the list.
 
 Then back in the list, select the "- Stock Bottom Vision Settings -" in the drop-down in the Bottom **Vision column** cell. If there are any prior Vision Settings, note them down, so you can revert later.
 
 ![Select Stock Bottom Vision Settings](https://user-images.githubusercontent.com/9963310/228458733-893feb16-0499-40ae-a9ba-850babc0ae76.png)
 
-Once you've selected it, you should get the so-called [[Exposed Pipeline Parameters]], visible as sliders to control the essential parameters of the vision process.
+Go to the Bottom Vision Settings wizard (lower tab), you should get the so-called [[Exposed Pipeline Parameters]], visible as sliders to control the essential parameters of the vision process.
 
 ![Sliders](https://user-images.githubusercontent.com/9963310/155244204-5df01b2c-02be-4475-92b4-4063c36e7acc.png)
+
+## Specialize for Package or Part
+
+Press the **Specialize for XXX** button to make a changed setting special for the part (and _not_ affect other parts and packages). This will clone the prior settings it had before.
+
+![Specialize for Part](https://user-images.githubusercontent.com/9963310/228461736-b28dbd8c-2756-4794-9be8-e27765675090.png)
+
 
 ## Tuning Bottom Vision
 
@@ -89,6 +94,8 @@ Vision Settings, including the sliders settings, are applied on a multi-level in
 - On the **Parts** level, effective only for that Part
 
 The idea is to unify and centralize the settings as much as possible in order to make maintenance easier and to easily propagate adjustments to all relevant parts, by inheritance. 
+
+If you need special settings on a specific type of package or part, including special** Threshold** or **Min. Detail Size** slider settings, use the **Specialize for XX** button as described in [Specialize for Package or Part](#specialize-for-package-or-part) further above.
 
 If you want a package or part to inherit the default from the prior level, just unassign the Vision Settings, i.e. select the empty entry:
 
