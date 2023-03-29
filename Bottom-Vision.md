@@ -11,15 +11,96 @@ The basic idea for bottom vision is:
 3. Using a [[CvPipeline]], determine the part's offset from center and whether or not it is rotated.
 4. Provide the resulting X, Y and Rotation coordinates to the JobProcessor so that the error can be corrected during placement.
 
-Core to the working of Bottom Vision is the [[CvPipeline]]. The pipeline describes a series of computer vision operations that will take place to convert the input image to a `RotatedRect`. `RotatedRect` is computer vision speak for a rectangle (width, height, X, Y) with a rotation component. Using this `RotatedRect` we calculate the error and correct it.
+# Preparations
 
-# Hardware Setup
+## Machine Setup and Calibration
 
-* Connect and configure an Up looking camera. It should not be attached to a head.
+Be sure to have followed [[Issues and Solutions]] to have configured and calibrated your machine, cameras, nozzle offsets etc. including notably the [[Nozzle Tip Background Calibration]].
 
-* The lens should be set up such that when the nozzle is centered over the camera the largest part you intend to use fits within the frame. If you are using a fisheye lens or a lens with significant distortion, consider [[Camera Lens Calibration]].
+## Nozzle Tip Configuration
 
-* Set the camera's location (in it's setup panel) such that the nozzle is centered and focused over the camera.
+As a further prerequisite, you also need to configure settings on each nozzle tip: 
+
+![Max. Pick Tolerance](https://user-images.githubusercontent.com/9963310/156925117-1c2fbd35-3003-4354-96bd-6481b9920342.png)
+
+**Min. Part Diameter** sets the minimum part dimension assumed to be picked with this nozzle tip. This diameter is used to calculate an _inner_ diameter of the nozzle tip that will always be covered by the part (**Min. Part Diameter** minus two times the **Maximum Pick Tolerance**). The pixels in the _inner_ diameter are then disregarded/blotted-out  by the [Background Calibration](/openpnp/openpnp/wiki/Nozzle-Tip-Background-Calibration).
+
+**Max. Part Diameter** sets the maximum part dimensions (diagonal) assumed to be picked with this nozzle tip. This diameter is used to limit the image area that is taken into consideration. This is also effective as a circular black mask (using MaskCircle). If your camera view has background elements in the periphery that are disruptive to computer vision (there is often some glare), this is a way to cut it off.
+
+**Maximum Pick Tolerance** sets the maximum allowed distance of the detected part, from its expected location. If it is larger than the given distance, an error will be thrown. This also controls the vision process, by limiting the maximum search distance. Side note: It is also important if you use [[Vision Compositing]] a.k.a. Multi-Shot bottom vision for parts that are larger than the camera view (as explained there).
+
+# Using the Stock Vision Settings
+
+It is recommended to always first try to use the unchanged stock vision settings for bottom vision. 
+
+NOTE: If your configurations comes from an older version of OpenPnP, chances are that you are not already using the stock vision settings. One tell-tale is missing sliders in your Bottom Vision Settings. If these are missing, proceed with the following instructions. If they are already there, you can skip ahead to [Tuning Bottom Vision](#tuning-bottom-vision).
+
+![Sliders](https://user-images.githubusercontent.com/9963310/155244204-5df01b2c-02be-4475-92b4-4063c36e7acc.png)
+
+The following will show you how to select and use them, step by step.
+
+
+## Trying Stock Vision Setting
+
+The first step is to try it out with a specific part that you have available for testing. Go to the **Parts** tab, select that part in the list. Go to the Bottom Vision Settings wizard (lower tab). Then press the **Specialize for XXX** button to make this trial special for the part (and not affect other parts and packages).
+
+![Specialize for Part](https://user-images.githubusercontent.com/9963310/228461736-b28dbd8c-2756-4794-9be8-e27765675090.png)
+
+Then back in the list, select the "- Stock Bottom Vision Settings -" in the drop-down in the Bottom **Vision column** cell. If there are any prior Vision Settings, note them down, so you can revert later.
+
+![Select Stock Bottom Vision Settings](https://user-images.githubusercontent.com/9963310/228458733-893feb16-0499-40ae-a9ba-850babc0ae76.png)
+
+Once you've selected it, you should get the so-called [[Exposed Pipeline Parameters]], visible as sliders to control the essential parameters of the vision process.
+
+![Sliders](https://user-images.githubusercontent.com/9963310/155244204-5df01b2c-02be-4475-92b4-4063c36e7acc.png)
+
+## Tuning Bottom Vision
+
+Pick a part from the feeder and just try it out using a first **Test Alignment**:
+
+![Test Alignment](https://user-images.githubusercontent.com/9963310/228464032-df99a50c-6a5e-4f3e-925f-fe6c3d95927f.png)
+
+This will perhaps not yet work, but it will move the part to the bottom camera and make sure it is properly lighted. Now you can use the sliders to control the Bottom Vision process.
+
+**Threshold** sets the minimal brightness that isolates the shiny contacts of a part from the background.
+
+**Min. Detail Size** sets the minimum size of any details that should still be considered contacts. You can suppress background specks, image noise etc. that might otherwise spoil the detection.
+
+The effect of the tweaking is directly shown in the Camera Preview. As configured in the parameter, the slider previews the [[Computer Vision pipeline|CvPipeline]] stage that best shows the effect of the adjustments. In addition, if you stop dragging the slider, the computer vision end result is displayed with a slight delay. Watch it in action in the animation:
+
+![Parametric-Pipeline](https://user-images.githubusercontent.com/9963310/155286493-f074b6b0-74c2-4d2e-ac30-3619a70f424d.GIF)
+
+Using these parameters you should get your bottom vision going in almost all cases. 
+
+Use the **Test Aligment** button again, it should now iteratively center and align the part. The iterative process is controlled by some settings in the [Global Configuration](#global-configuration) explained further below.
+
+If the stock bottom vision and tweaking the parameters does not work for you, we developers are interested to understand why, and ask you to contribute your images to the [discussion group](http://groups.google.com/group/openpnp). To do so, double click your camera view and go to your `$HOME/.openpnp2/snapshots` directory, where the camera image was saved (see the [FAQ](https://github.com/openpnp/openpnp/wiki/FAQ#where-are-configuration-and-log-files-located) for where that directory is on your computer).
+
+## Make it the new Default
+
+If you are pleased with the results and want to use the Stock Bottom Vision Settings more generally, you can [make it the system default](https://github.com/openpnp/openpnp/wiki/Computer-Vision#make-stock-vision-the-default). 
+
+## Vision Settings Inheritance
+
+Vision Settings, including the sliders settings, are applied on a multi-level inheritance scheme:
+
+- As the **Default** (in Machine Setup / Vision), effective for all packages and parts, unless specialized there
+- On the **Packages** level, effective for all parts with that package, unless specialized there
+- On the **Parts** level, effective only for that Part
+
+The idea is to unify and centralize the settings as much as possible in order to make maintenance easier and to easily propagate adjustments to all relevant parts, by inheritance. 
+
+If you want a package or part to inherit the default from the prior level, just unassign the Vision Settings, i.e. select the empty entry:
+
+![Unselect Vision Settings](https://user-images.githubusercontent.com/9963310/228483144-b7308203-cb69-4b13-b5d5-9950de384574.png)
+
+To understand how this all interacts, you may also want to watch the (somewhat outdated) video:
+
+- [OpenPnP New Bottom Vision Settings](https://youtu.be/W63GbSf5BHk)
+
+## How Bottom Vision Works Internally
+
+Core to the working of Bottom Vision is the [[CvPipeline]]. The pipeline describes a series of computer vision operations that will take place to convert the input image to a `RotatedRect`. `RotatedRect` is computer vision speak for a rectangle (width, height, X, Y) with a rotation component. Using this `RotatedRect` we calculate the alignment error and correct it.
 
 # Global Configuration
 
@@ -36,7 +117,7 @@ To configure Bottom Vision visit Machine Setup -> Vision -> Bottom Vision.
 
 ### Multi-pass Vision
 
-The part will first be positioned and rotated as picked from the feeder, which means it might be slightly offset both in location and angle, due to play in the feeder etc. The vision operation then determines these offsets, but these may be inaccurate as the part is seen slightly from the side, which may create parallax errors and slight changes in light relection angles which might affect how beveled/angled surfaces are lighted. Furthermore, the scale in the camera view (units per pixel) might be slightly in error as the part or some of its features (angled pins etc.) might be slightly outside the focal plane. 
+The part will first be positioned and rotated as picked from the feeder, which means it might be slightly offset both in location and angle, due to play in the feeder etc. The vision operation then determines these offsets, but these may be inaccurate as the part is seen slightly from the side, which may create parallax errors and slight changes in light reflection angles which might affect how beveled/angled surfaces are lighted. Furthermore, the scale in the camera view (units per pixel) might be slightly in error as the part or some of its features (angled pins etc.) might be slightly outside the focal plane. 
 
 In order to further improve precision, the part is then centered in the camera view, according to the preliminary offsets and the process is repeated. By centering the part (multiple times), the mentioned errors can be cancelled out by symmetry. 
 
@@ -51,6 +132,12 @@ In order to further improve precision, the part is then centered in the camera v
 You will probably need to customize the pipeline a bit for your machine. See the [Tips](#tips) section below. There is likely to be a lot of discussion and learning happening on [the mailing list](http://groups.google.com/group/openpnp). That should be your first stop for help.
 
 # Part Configuration
+
+___
+NOTE: the following is quite outdated, not taking into account the new system of **Vision Settings** or **Exposed Pipeline Parameters**.
+
+The following is no longer entirely accurate and left for older versions of OpenPnP.
+___
 
 Each Part in your Parts library can have it's own custom pipeline. In most cases the default pipeline will work but this allows you tweak the pipeline for troublesome parts or create entirely new pipelines when the default won't work.
 
