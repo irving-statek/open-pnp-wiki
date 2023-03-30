@@ -57,4 +57,6 @@ Then, no matter where the board is located and oriented and regardless of which 
 <img width="400" alt="nonRectBoardTopOnMachine" src="https://user-images.githubusercontent.com/50550971/227805260-2677fbec-91c3-4b5b-ae79-73070c0df42e.png">
 <img width="400" alt="nonRectBoardBottomOnMachine" src="https://user-images.githubusercontent.com/50550971/227805275-f69f1cd7-1df9-40c1-a37c-8d786e394c72.png">
 
+# Panel Locations
+Panel locations are handled the same as board locations. Since panels are almost always rectangular in shape, follow the guidelines outlined above for [rectangular boards](#rectangular-boards).
 
