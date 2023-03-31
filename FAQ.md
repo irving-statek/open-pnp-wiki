@@ -6,6 +6,7 @@
 * [How do I start OpenPnP with a JAR File?](#how-do-i-start-openpnp-with-a-jar-file)
 * [How do I use a different config directory](#how-do-i-use-a-different-config-directory)
 * [How do I turn on debug logging?](#how-do-i-turn-on-debug-logging)
+* [How can I get a native camera image?](#how-can-i-get-a-native-camera-image)
 * [What are the newest Features and Bugfixes in OpenPnP?](#what-are-the-newest-features-and-bugfixes-in-openpnp)
 * [How do I troubleshoot GcodeDriver?](#how-do-i-troubleshoot-gcodedriver)
 * [I'm having trouble connecting multiple USB cameras.](#im-having-trouble-connecting-multiple-usb-cameras)
@@ -81,6 +82,14 @@ java -DconfigDir=src/main/resources/config -jar target/openpnp-gui-0.0.1-alpha-S
 3. Click the dropdown and select Debug or Trace, depending on how much output you want.
 
 Note: Debug is good for general debugging. Trace is good for when you want very low level information such as Gcode commands being sent to the controller.
+
+## How can I get a native camera image?
+
+Make sure your Camera View shows the relevant situation. Then double click on the Camera View to create s snapshot. The Camera View will flash.
+
+The snapshot image is written to your OpenPnP configuration folder. See [Where are configuration and log files located?](#where-are-configuration-and-log-files-located).
+
+If you send the camera image to the [Discussion Group](http://groups.google.com/group/openpnp), it is best to also state your camera's **Units per Pixel**. Knowledgeable users in the discussion group can then reconstruct your basic camera situation inside a [[Computer Vision Pipeline|CVPipeline]].
 
 ## What are the newest Features and Bugfixes in OpenPnP?
 
