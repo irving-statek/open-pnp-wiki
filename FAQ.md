@@ -87,7 +87,7 @@ Note: Debug is good for general debugging. Trace is good for when you want very 
 
 Make sure your Camera View shows the relevant situation. Then double click on the Camera View to create s snapshot. The Camera View will flash.
 
-The snapshot image is written to your OpenPnP configuration folder. See [Where are configuration and log files located?](#where-are-configuration-and-log-files-located).
+The snapshot image is written to your OpenPnP configuration folder. See [Where are configuration and log files located?](#where-are-configuration-and-log-files-located)
 
 If you send the camera image to the [Discussion Group](http://groups.google.com/group/openpnp), it is best to also state your camera's **Units per Pixel**. Knowledgeable users in the discussion group can then reconstruct your basic camera situation inside a [[Computer Vision Pipeline|CVPipeline]].
 
