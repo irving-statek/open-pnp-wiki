@@ -53,7 +53,7 @@ Issues are classified and color-coded by **Severity**.
 
 ## Milestones / Tracking Progress
 
-Issues & Solutions has **Milestones** to track the progress when building and configuring a machine. Only the Issues & Solution due for the current milestone will be shown. Some solutions will be adaptive to the targeted milestone, proposing simpler solutions for earlier milestones. These will be revisited when you proceed to later milestones. 
+Issues & Solutions has **Milestones** to track the progress when building and configuring a machine. Only the Issues & Solution due for the current and previous milestones will be shown. Some solutions will be adaptive to the targeted milestone, proposing simpler solutions for earlier milestones. These will be revisited when you proceed to later milestones. 
 
 For troubleshooting, you can also go back to earlier milestones. Issues & Solutions will then sometimes propose taking back more advanced choices you already made. This way you can try to solve a problem by starting from a safer base. 
 
