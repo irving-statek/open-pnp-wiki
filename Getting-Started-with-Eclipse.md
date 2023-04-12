@@ -27,7 +27,11 @@
 
 ### Troubleshooting Java Modules
 
-A the time of writing this, you likely need to resolve a Java Modules issue like so:
+A the time of writing this, you likely need to resolve a Java Modules issues, reported with error messages of the following type:
+
+`The package javax.xml.transform.sax is accessible from more than one module: <unnamed>, java.xml    EagleLoader.java ...`
+
+To resolve this, follow these steps:
 
 1. Exit Eclipse.
 2. Open the `.settings/org.eclipse.jdt.core.prefs` file inside your `openpnp` git directory.
