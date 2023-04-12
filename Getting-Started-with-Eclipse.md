@@ -25,7 +25,24 @@
 * <sup>1</sup> It is possible to later change so your clone is pointing to your fork at Github.
 * <sup>2</sup> You cannot directly push your changes to OpenPnP, it must go through your own fork.
 
-### Designing UI Elements
+### Troubleshooting Java Modules
+
+A the time of writing this, you likely need to resolve a Java Modules issue like so:
+
+1. Exit Eclipse.
+2. Open the `.settings/org.eclipse.jdt.core.prefs` file inside your `openpnp` git directory.
+3. Add the following line:
+   `org.eclipse.jdt.core.compiler.ignoreUnnamedModuleForSplitPackage=enabled`
+4. Restart Eclipse.
+5. Do Maven / Update Project ... (or `Alt-F5`).
+
+Source:
+https://stackoverflow.com/a/74890645/15218951
+
+See also:
+https://groups.google.com/g/openpnp/c/3dv0B3Me9uw/m/HloqU8kkBQAJ
+
+## Designing UI Elements
 To edit user interface Wizards etc. you need to install a graphical UI designer like WindowBuilder.
 
 Follow the video:
