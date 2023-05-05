@@ -22,21 +22,20 @@ KiCAD
 
 Altium
 ------
-1. Under Outjob configure Pick and Place Setup to use CSV and Text Formats.  Use Metric units.
-1. or While Viewing the PCB, use File->Assembly Outputs->Pick and Place Files and set Pick and Place Setup to use CSV and Text Formats.  Use Metric units.
-
-2. In OpenPnP, use File -> Import Board -> Named CSV.
+1. Under Outjob -> Assembly Outputs add Generates pick and place files and set Formats to CSV.
+2. or While Viewing the PCB, use File -> Assembly Outputs -> Generate pick and place files and set Formats to CSV.
+3. In OpenPnP, use File -> Import Board -> Altium CSV. (In older OpenPnP versions use Named CSV and export "Ref-X" and "Ref-Y". The default "Center-X" and "Center-Y" are not supported.)
 
 Others
 ------
 
-OpenPnP includes a Named CSV importer (File -> Import -> Named CSV) which can import many types of CSV files. Coordinate data must be in Millimeters. Field separator must be a comma. 
+OpenPnP includes a Reference CSV importer (File -> Import -> Reference CSV) (Named CSV in old OpenPnP versions) which can import many types of CSV files. X, Y and Heights coordinate data is converted automatically from Mil to Millimeter if their field ends (case insensitive) in "(mil)". Units in the data ("mm" or "mil") are automatically removed. Side/TBs data is decoded by looking at the first character only ('b' for bottom and 't' for top side, again case insensitive). Field separator must be a comma. 
 
-Format specifications need to be inside the first 10 lines of file.
+Format specifications need to be inside the first 50 lines of file.
 
 The first six fields are required in order to successfully import centroid data.
 
-The fields that the Named CSV importer will look for are: (not case sensitive)
+The fields that the Reference CSV importer will look for are: (not case sensitive)
 * Refs: "Designator", "Part", "Component", "RefDes", "Ref"
 * Vals: "Value", "Val", "Comment", "Comp_Value"
 * Packs: "Footprint", "Package", "Pattern", "Comp_Package"
