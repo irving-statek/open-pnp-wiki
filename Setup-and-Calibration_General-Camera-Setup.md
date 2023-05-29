@@ -75,6 +75,18 @@ Lens calibration can be used to remove lens distortion from your camera. It can 
 
 When you look at the camera image in OpenPnP it should be right side up. Depending on how your camera is mounted, this might not be the case. By setting transformations in the camera configuration you can adjust the image so it appears correct.
 
+The following illustration gives you an overview of how your camera views must be oriented, so the [[Machine Axes]] show up the right way:
+
+![camera looking model small](https://github.com/openpnp/openpnp/assets/9963310/81f88256-25ac-4f4f-8bac-18b3635919b2)
+
+Through your "Top" camera view you are looking down onto the XY plane, towards Z-negative. So what is X-positive must be "right" on the camera view, what is Y-positive must be "up". Your rotation C axis goes counter-clockwise.
+
+Through your "Bottom" camera view it is like looking through your nozzle onto an imaginary mirror under your machine table, the reflection looking up at the underside of the X/Y plane, towards Z-positive, i.e. at the underside of your part held on your nozzle tip. 
+
+Why a mirror? Because you are looking at the underside, i.e. back at yourself, either axis X or Y, and rotation axis C would be going the wrong way, hence we need the mirroring. It's a bit like the selfie-camera on your smartphone, it too points back at you, and it too has a mirrored preview, otherwise you would hardly be able to align the camera.
+
+**Note:** it is now strongly recommended to let [[Issues and Solutions]] guide you through all these steps. The camera rotation and transforms will be automatically detected and set up, among other things. 
+
 ### Top Camera
 
 A Top Camera image should appear as if you are looking down at the machine. The top of the image should be away from you, the bottom of the image should be towards you.
