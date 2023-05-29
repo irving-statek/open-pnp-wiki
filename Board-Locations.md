@@ -1,3 +1,5 @@
+# Information on this page is outdated, please see [[Understanding Board Locations]] instead.
+
 # New Method
 
 Due to a recent change, the way that board locations are configured for board bottoms has changed. You can still use the old method but the new method, described here is the better choice.
