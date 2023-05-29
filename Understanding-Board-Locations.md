@@ -1,5 +1,3 @@
-Moved to [[Board Locations]]
-
 # Preliminaries
 In order for OpenPnP to successfully place a part on a board, it needs to "know" where the part should be positioned on the board, and, just as importantly, it also needs to "know" where the board is positioned on the machine. That first bit of knowledge comes from the CAD database for the board. And the second, from capturing the location of the board using the top (down looking) camera.
 
