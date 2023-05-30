@@ -1,14 +1,19 @@
 THIS IS A WORK IN PROGRESS
 
-A panel is a physical entity consisting of multiple boards and/or subpanels that are physically connected as a single unit for convenience of fabrication and assembly. Once all the boards making up the panel have been assembled, they are physically separated from one another by cutting, snapping, or some other means.
+A panel is a physical entity consisting of multiple boards and/or subpanels that are physically connected as a single unit for convenience and economy of fabrication and assembly. Once all the boards making up the panel have been assembled, they are physically separated from one another by cutting, snapping, or some other means.
 
-OpenPnP permits any number of different board designs on a single panel design. However, due to the nature of the PCB fabrication process, all boards of the panel need to have the same layer stack-up. Check with the PCB fabricator for any restrictions.
+OpenPnP permits any number of different board designs to be part of a single panel design and they can be arranged in any arbitrary manner. However, due to the nature of the PCB fabrication process, all boards of the panel must use the same layer stack-up. Check with the PCB fabricator for any additional restrictions.
 
-In OpenPnP, a panel is defined by a panel definition that is setup on the Panels tab. See [here](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) in the User Manual for more details.
+In OpenPnP, panels are defined on the Panels tab. See [here](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) in the User Manual for more details. Each panel is defined by two lists. The first is a list of boards and/or subpanels (the panel's "children") that provide the coordinates and orientation of each member of the panel. And the second is a list of fiducials that can be used for "fine tuning" the panel's location and rotation when it is used in a job. Note, that as shown in the following figure, all coordinates are defined when viewing the panel from its top side. This includes the coordinates of panel fiducials located on the bottom side of the panel, i.e., they are viewed looking through the panel from its top side. Also note that panels can include a mix of boards oriented with either their top or bottom side towards the panel's top side. The coordinates and rotation angles of the boards within a panel are fully consistent with how the coordinates and rotation angles of boards within a job are defined - the only difference is that they are measured with respect to the panel's coordinate system rather than the machine's coordinate system.
+
+Since panels are almost always rectangular in shape, it is recommended that the origin of the panel's coordinate system be placed at the lower left corner of the panel as shown below. This permits panels with placements on both sides to be flipped over easily during a job without the operator having to recapture a new location for the panel. See [[Understanding Board Locations]] for more information.
+
+<img width="920" alt="panelDefinition" src="https://github.com/openpnp/openpnp/assets/50550971/ba3032a7-f18e-419c-867b-041cbe04f853">
+
 
 ## Panelization Attributes
 
-The image below shows a panelized design. There are a few key features readily visible on this panel. First, the panel is a 3x3 configuration--there are 3 rows of the design and 3 columns of the design. Second, note that lower left left and upper right have fiducials. As with fiducials on a single PCB, fiducials here help the PNP machine orient the board and determine if any rotation is present. In the image below, it's clear that the image is rotated. This was done for testing.
+The image below shows a panelized design. There are a few key features readily visible on this panel. First, the panel is a 3x3 configuration--there are 3 rows of the design and 3 columns of the design. Each board is 58mm in width and 23mm in length. Second, note that lower left and upper right have fiducials. As with fiducials on a single PCB, fiducials here help the PNP machine orient the board and determine if any rotation is present. In the image below, it's clear that the image is rotated. This was done for testing.
 
 ![](https://cloud.githubusercontent.com/assets/24760857/24583526/f4908b70-1701-11e7-8f6c-890540e15435.png)
 
