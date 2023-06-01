@@ -1,4 +1,4 @@
-THIS IS A WORK IN PROGRESS
+THIS IS A WORK IN PROGRESS...
 
 A panel is a physical entity consisting of multiple boards and/or subpanels that are physically connected as a single unit for convenience and economy of fabrication and assembly. Once all the boards making up the panel have been assembled, they are physically separated from one another by cutting, snapping, or some other means.
 
@@ -10,13 +10,9 @@ Since panels are almost always rectangular in shape, it is recommended that the 
 
 <img width="920" alt="panelDefinition" src="https://github.com/openpnp/openpnp/assets/50550971/ba3032a7-f18e-419c-867b-041cbe04f853">
 
-![pnpTestPanelTop](https://github.com/openpnp/openpnp/assets/50550971/fbe0f46f-9761-4964-8eb2-4622926d7204)
+<img width="450" alt="pnpTestPanelTop" src="https://github.com/openpnp/openpnp/assets/50550971/fbe0f46f-9761-4964-8eb2-4622926d7204">&nbsp;  &nbsp;  &nbsp;  <img width="450" alt="pnpTestPanelBottom" src="https://github.com/openpnp/openpnp/assets/50550971/ec028bdb-1293-45e1-bfc2-75485e84a718">
 
-![pnpTestPanelBottom](https://github.com/openpnp/openpnp/assets/50550971/ec028bdb-1293-45e1-bfc2-75485e84a718)
-
-<img width="713" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">
-
-<img width="713" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">
+<img width="713" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b"><img width="713" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">
 
 
 ## Panelization Attributes
