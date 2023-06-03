@@ -4,16 +4,31 @@ A panel is a physical entity consisting of multiple boards and/or subpanels that
 
 OpenPnP permits any number of different board designs to be part of a single panel design and they can be arranged in any arbitrary manner. However, due to the nature of the PCB fabrication process, all boards of the panel must use the same layer stack-up. Check with the PCB fabricator for any additional restrictions.
 
-In OpenPnP, panels are defined on the Panels tab. See [here](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) in the User Manual for more details. Each panel has width and length settings to define its dimensions. In addition, each panel definition consists of two lists: The first is a list of boards and/or subpanels (the panel's "children") that provide the coordinates and orientation of each member of the panel. And the second is a list of fiducials that can be used for "fine tuning" the panel's location and rotation when it is used in a job. Note, that as shown in the following figure, all coordinates are defined when viewing the panel from its top side. This includes the coordinates of panel fiducials located on the bottom side of the panel, i.e., they are viewed looking through the panel from its top side. Also note that panels can include a mix of boards oriented with either their top or bottom side towards the panel's top side. The coordinates and rotation angles of the boards within a panel are fully consistent with how the coordinates and rotation angles of boards within a job are defined - the only difference is that they are measured with respect to the panel's coordinate system rather than the machine's coordinate system.
+# Panel Definitions
 
-Since panels are almost always rectangular in shape, it is recommended that the origin of the panel's coordinate system be placed at the lower left corner of the panel as shown below. This permits panels with placements on both sides to be flipped over easily during a job without the operator having to recapture a new location for the panel. See [[Understanding Board Locations]] for more information.
+In OpenPnP, panels are defined on the Panels tab. See [here](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) in the User Manual for more details. Each panel has width and length settings to define its dimensions. In addition, each panel definition consists of two lists: The first is a list of boards and/or subpanels (the panel's "children") that provide the coordinates and orientation of each member of the panel. And the second is a list of fiducials that can be used for "fine tuning" the panel's location and rotation when it is used in a job. Note, that as shown in the following figure, all coordinates are defined when viewing the panel from its top side. This includes the coordinates of panel fiducials located on the bottom side of the panel, i.e., they are measured by looking through the panel from its top side. Also note that panels can include a mix of boards oriented with either their top or bottom side towards the panel's top side. The coordinates and rotation angles of the boards within a panel are fully consistent with how the coordinates and rotation angles of boards within a job are defined - the only difference is that they are measured with respect to the panel's coordinate system rather than the machine's coordinate system.
 
-<img width="920" alt="panelDefinition" src="https://github.com/openpnp/openpnp/assets/50550971/ba3032a7-f18e-419c-867b-041cbe04f853">
+<img width="920" alt="panelDefinition" src="https://github.com/openpnp/openpnp/assets/50550971/ba3032a7-f18e-419c-867b-041cbe04f853">&nbsp;  
 
-<img width="450" alt="pnpTestPanelTop" src="https://github.com/openpnp/openpnp/assets/50550971/fbe0f46f-9761-4964-8eb2-4622926d7204">&nbsp;  &nbsp;  &nbsp;  <img width="450" alt="pnpTestPanelBottom" src="https://github.com/openpnp/openpnp/assets/50550971/ec028bdb-1293-45e1-bfc2-75485e84a718">
+# Design Considerations
 
-<img width="713" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b"><img width="713" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">
+Since panels are almost always rectangular in shape, it is recommended that the origin of the panel's coordinate system be placed at the lower-left corner of the panel (when viewed from its top side) with the positive X-axis increasing to the right along the lower edge and the positive Y-axis increasing upwards along the left edge of the panel as shown in the above figure. In addition, set the width of the panel to its X extent and the length to its Y extent.  While this isn't an absolute necessity, it does permit panels with placements on both sides to be flipped over easily during a job without the operator having to recapture a new location for the panel. In other words, flipping a panel over to place parts on its other side works exactly the same as when flipping individual boards over. See [[Understanding Board Locations]] for more information.
 
+# Design Example
+
+As an example, the images below depict the top and bottom side of the simulated test panel "pnp-test.panel.xml" included with OpenPnP. It holds three copies of "pnp-test.board.xml" at various orientations.
+
+<img width="400" alt="pnpTestPanelTop" src="https://github.com/openpnp/openpnp/assets/50550971/fbe0f46f-9761-4964-8eb2-4622926d7204">&nbsp;  &nbsp;  &nbsp;  <img width="400" alt="pnpTestPanelBottom" src="https://github.com/openpnp/openpnp/assets/50550971/ec028bdb-1293-45e1-bfc2-75485e84a718">&nbsp;  
+
+Shown below is the definition of the panel:
+
+<img width="811" alt="pnp-test-panelized-panelsTab" src="https://github.com/openpnp/openpnp/assets/50550971/eeb3c69e-ae63-45ce-91da-c09cf9428b64">&nbsp;  
+
+And here is the panel as shown in the Panel Viewer, again showing both the top and bottom views:
+
+<img width="400" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="400" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
+
+# Everything below this line is out-of-date
 
 ## Panelization Attributes
 
