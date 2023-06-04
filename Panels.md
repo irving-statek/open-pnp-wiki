@@ -22,11 +22,11 @@ As an example, the images below depict the top and bottom side of the simulated 
 
 Shown below is the definition of the panel on OpenPnP's Panels tab:
 
-<img width="1099" alt="pnp-test-panelized-panelsTabAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/24878e2f-2279-41b4-b781-4ab10a2e2bec">&nbsp;  
+<img width="1097" alt="pnp-test-panelized-panelsTabAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/d8000bfe-f8e3-4eee-af3d-2b699e82ecda">&nbsp;  
 
-And here is the panel as shown in the Panel Viewer, again showing both the top and bottom views:
+And here is the panel as shown in the Panel Viewer, again showing both its top and bottom sides. Note how the locations of the boards and the panel itself (as denoted by the red and cyan crosshairs) coincide with the boards' and panel's coordinate system origins (as denoted by the red and cyan double arrows) when viewing their respective top sides. Further note that the locations of boards and the panel itself are offset from their respective coordinate system origins by their widths when viewing their bottom sides:
 
-<img width="400" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="400" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
+<img width="450" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="450" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
 
 # Everything below this line is out-of-date
 
