@@ -18,11 +18,11 @@ Since panels are almost always rectangular in shape, it is recommended that the 
 
 As an example, the images below depict the top and bottom side of the simulated test panel "pnp-test.panel.xml" included with OpenPnP. It holds three copies of "pnp-test.board.xml" at various orientations.
 
-<img width="400" alt="pnpTestPanelTop" src="https://github.com/openpnp/openpnp/assets/50550971/fbe0f46f-9761-4964-8eb2-4622926d7204">&nbsp;  &nbsp;  &nbsp;  <img width="400" alt="pnpTestPanelBottom" src="https://github.com/openpnp/openpnp/assets/50550971/ec028bdb-1293-45e1-bfc2-75485e84a718">&nbsp;  
+<img width="882" alt="pnpTestPanelBothAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/791d841e-9872-4d0c-b817-7d8bcbcf0e78">&nbsp;  
 
-Shown below is the definition of the panel:
+Shown below is the definition of the panel on OpenPnP's Panels tab:
 
-<img width="811" alt="pnp-test-panelized-panelsTab" src="https://github.com/openpnp/openpnp/assets/50550971/eeb3c69e-ae63-45ce-91da-c09cf9428b64">&nbsp;  
+<img width="1099" alt="pnp-test-panelized-panelsTabAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/24878e2f-2279-41b4-b781-4ab10a2e2bec">&nbsp;  
 
 And here is the panel as shown in the Panel Viewer, again showing both the top and bottom views:
 
