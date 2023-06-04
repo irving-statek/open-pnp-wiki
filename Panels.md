@@ -26,7 +26,7 @@ Shown below is the definition of the panel on OpenPnP's Panels tab:
 
 And here is the panel as shown in the Panel Viewer, again showing both its top and bottom sides. Note how the locations of the boards and the panel itself (as denoted by the red and cyan crosshairs) coincide with the boards' and panel's coordinate system origins (as denoted by the red and cyan double arrows) when viewing their respective top sides. Further note that the locations of boards and the panel itself are offset from their respective coordinate system origins by their widths when viewing their bottom sides:
 
-<img width="450" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="450" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
+<img width="420" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="420" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
 
 # Everything below this line is out-of-date
 
