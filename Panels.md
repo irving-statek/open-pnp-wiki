@@ -2,11 +2,11 @@ THIS IS A WORK IN PROGRESS...
 
 A panel is a physical entity consisting of multiple boards and/or subpanels that are physically connected as a single unit for convenience and economy of fabrication and assembly. Once all the boards making up the panel have been assembled, they are physically separated from one another by cutting, snapping, or some other means.
 
-OpenPnP permits any number of different board designs to be part of a single panel design and they can be arranged in any arbitrary manner. However, due to the nature of the PCB fabrication process, all boards of the panel must use the same layer stack-up. Check with the PCB fabricator for any additional restrictions.
+OpenPnP permits any number of different board designs to be part of a single panel design and they can be arranged in any arbitrary manner. However, due to the nature of the PCB fabrication process, all boards of a panel must use the same layer stack-up. Check with the PCB fabricator for any additional restrictions.
 
 # Panel Definitions
 
-In OpenPnP, panels are defined on the Panels tab. See [here](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) in the User Manual for more details. Each panel has width and length settings to define its dimensions. In addition, each panel definition consists of two lists: The first is a list of boards and/or subpanels (the panel's "children") that provide the coordinates and orientation of each member of the panel. And the second is a list of fiducials that can be used for "fine tuning" the panel's location and rotation when it is used in a job. Note, that as shown in the following figure, all coordinates are defined when viewing the panel from its top side. This includes the coordinates of panel fiducials located on the bottom side of the panel, i.e., they are measured by looking through the panel from its top side. Also note that panels can include a mix of boards oriented with either their top or bottom side towards the panel's top side. The coordinates and rotation angles of the boards within a panel are fully consistent with how the coordinates and rotation angles of boards within a job are defined - the only difference is that they are measured with respect to the panel's coordinate system rather than the machine's coordinate system.
+In OpenPnP, panels are defined on the Panels tab. See the [Panels](https://github.com/openpnp/openpnp/wiki/User-Manual#panels) section of the User Manual for more details. Each panel definition includes width and length settings to define its physical extent. In addition, each panel definition has two lists: The first is a list of boards and/or subpanels (the panel's "children") that provide the coordinates and orientation of each member of the panel. And the second is a list of fiducials that can be used for "fine tuning" the panel's location and rotation when it is used in a job. Note, as shown in the following figure, all coordinates are defined when viewing the panel from its top side. This includes coordinates of panel fiducials located on the bottom side of the panel, i.e., their coordinates are measured by looking through the panel from its top side. Also note that panels can include a mix of boards oriented with either their top or bottom side towards the panel's top side. The coordinates and rotation angles of the boards within a panel are fully consistent with how the coordinates and rotation angles of boards within a job are defined - the only difference is that they are measured with respect to the panel's coordinate system rather than the machine's coordinate system.
 
 <img width="920" alt="panelDefinition" src="https://github.com/openpnp/openpnp/assets/50550971/ba3032a7-f18e-419c-867b-041cbe04f853">&nbsp;  
 
@@ -20,13 +20,28 @@ As an example, the images below depict the top and bottom side of the simulated 
 
 <img width="882" alt="pnpTestPanelBothAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/791d841e-9872-4d0c-b817-7d8bcbcf0e78">&nbsp;  
 
-Shown below is the definition of the panel on OpenPnP's Panels tab:
+Below is the panel definition as it appears on OpenPnP's Panels tab:
 
 <img width="1097" alt="pnp-test-panelized-panelsTabAnnotated" src="https://github.com/openpnp/openpnp/assets/50550971/d8000bfe-f8e3-4eee-af3d-2b699e82ecda">&nbsp;  
 
 And here is the panel as shown in the Panel Viewer, again showing both its top and bottom sides. Note how the locations of the boards and the panel itself (as denoted by the red and cyan crosshairs) coincide with the boards' and panel's coordinate system origins (as denoted by the red and cyan double arrows) when viewing their respective top sides. Further note that the locations of boards and the panel itself are offset from their respective coordinate system origins by their widths when viewing their bottom sides:
 
 <img width="420" alt="pnpTestPanelTopPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/2245529e-a975-47f6-9509-c6e5d29b6f2b">&nbsp;  &nbsp;  &nbsp;  <img width="420" alt="pnpTestPanelBottomPanelViewer" src="https://github.com/openpnp/openpnp/assets/50550971/bed1e9f1-edd3-4af2-a2f5-041a73c8426f">&nbsp;  
+
+# Creating Arrays
+
+<img width="811" alt="pnp-test-panelExampleArray1" src="https://github.com/openpnp/openpnp/assets/50550971/ea011cbb-05f3-40d9-afab-dda80be4ba8d">&nbsp;  
+<img width="850" alt="PanelArrayGenerator" src="https://github.com/openpnp/openpnp/assets/50550971/85a97cba-f8c5-487b-9ba8-d62fb2d51ffd">&nbsp;  
+
+<img width="811" alt="pnp-test-panelExampleArray2" src="https://github.com/openpnp/openpnp/assets/50550971/4602fcd7-b16a-43fc-ba81-7afc5f35f3b5">&nbsp;  
+
+
+# X-Outs
+When a large panelized design is sent to a PCB fabrication house, they will want to know if it is acceptable for some of the boards in the panel to be defective (called X-Outs). This is their way of asking for help in terms of improving yield (which, in turn, will mean lower cost for you). As a PCB panel increases in size, the chances of a defect occurring increases. Boards for production go through electrical testing, and thus a PCB manufacturer will usually know which boards in a panel have problems. For example, too much copper was etched away in a certain area resulting in an open. Or not enough copper was etched away in a certain area resulting in a short. In these cases, the manufacturer will mark the board in the panel with a big "X", which indicates to the assembly operator that board should not have parts placed on it due to a fault in that particular board's PCB.
+
+In OpenPnP, there are two ways to deal with X-Outs: The first is to simply find the defective boards in the Job table and mark them as disabled (uncheck the Enabled checkbox). The second is to do it graphically in Job Viewer, open the Job Viewer, locate the defective board(s), right-click on it, and uncheck the Enabled checkbox in the pop-up menu.
+
+
 
 # Everything below this line is out-of-date
 
