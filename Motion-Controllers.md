@@ -18,9 +18,23 @@ There are a *lot* of motion controllers available, from Open Source software tha
 
 # Recommended Models
 
+OpenPnP is designed to work well with many different controllers, provided they adhere to the G-code/NIST RS274NGC standard quite well and support a "modern" feature set, such as true A B C axis operation (and not just "extruders"). 
+
+Some controllers need an updated or even custom firmware to achieve this. The [[Issues and Solutions]] system can recognize some of the firmwares and provide mostly automatic setup for these. See the [Firmwares page](https://github.com/openpnp/openpnp/wiki/Motion-Controller-Firmwares) for more details.
+
+The following are recommendations based on experience, automatic setup, and board availability. Other designs might also work and we developers are always open to support the next one.
+
+## Duet + RepRapFirmware
+
+After having been specifically extended to support OpenPnP very well, Duet 2 and Duet 3 and RepRapFirmware (starting from 3.3beta) are now formidable platforms for OpenPnP. Everything is Open Source. Some newer boards support up to 60V stepper voltage, which is great for the high speeds we want in Pick & Place. The boards are continually further developed and usually in stock.
+
+See the [Firmwares page](https://github.com/openpnp/openpnp/wiki/Motion-Controller-Firmwares#duet3d).
+
+Those interested in using Duet 2 or Duet3 with OpenPnP, for help and support please contact dc42 on the OpenPnP forum at https://groups.google.com/forum/#!forum/openpnp or the Duet3D forum at https://forum.duet3d.com/.
+
 ## Smoothie
 
-Based on years of evidence, and lots and lots of different builds, we recommend a [Smoothie](http://smoothieware.org/) based board for most machines. Smoothie is an Open Source motion controller firmware that runs on a variety of affordable, all in one boards. It's easy to configure, well documented and works great with OpenPnP.
+Based on years of evidence, and lots and lots of different builds, the [Smoothie](http://smoothieware.org/) was for a long time the uncontested champion for OpenPnP, and now still ranks with the best. Smoothie is an Open Source motion controller firmware that runs on a variety of affordable, all in one boards. It's easy to configure and well documented. The [Smoothie 2.0 project is underway](https://www.kickstarter.com/projects/arthurwolf/smoothieboard-v2), but not yet available (June 2023). 
 
 Some Smoothie based boards that are known to work with OpenPnP, and which you can buy online are:
 * **Smoothieboard**: http://smoothieware.org/getting-smoothieboard
@@ -46,13 +60,6 @@ There is a common style of pick and place often referred to as "Peter's Head". T
 
 Please see the [Firmwares page](https://github.com/openpnp/openpnp/wiki/Motion-Controller-Firmwares#smoothieware).
 
-## Duet + RepRapFirmware
-
-After having been specifically extended to support OpenPnP very well, Duet 2 and Duet 3 and RepRapFirmware (starting from 3.3beta) are now also formidable platforms for OpenPnP. 
-
-See the [Firmwares page](https://github.com/openpnp/openpnp/wiki/Motion-Controller-Firmwares#duet3d).
-
-Those interested in using Duet 2 or Duet3 with OpenPnP, for help and support please contact dc42 on the OpenPnP forum at https://groups.google.com/forum/#!forum/openpnp or the Duet3D forum at https://forum.duet3d.com/.
 
 ## TinyG
 
