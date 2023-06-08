@@ -1,14 +1,16 @@
 ## About Fiducials
 
-Fiducials, or fiduciary marks, are small identifiers designers place on PCBs specifically to help pick and place machines and other processes to visually align the board to a known reference point. A typical PCB that is designed for manufacture will have at least 3 fiducials and may have many more.
+Fiducials, or fiduciary marks, are small visual identifiers CAD designers place on PCBs specifically to help pick-and-place machines and other processes to visually align the board to a known reference point. In addition, fiducials can also be used to compensate for axis scaling and non-squareness differences between the PCB fabrication process and the pick-and-place machine. A typical PCB that is designed for manufacture will have at least 3 fiducials and may have many more. For the best results, the fiducials should be placed on the PCB as far apart from each other as possible. This means they are typically located near the corners of the PCB. If there are placements on both sides of the PCB, fiducials should be added to both sides.
 
-Fiducials are typically created by leaving a blank spot of copper on the PCB surrounded by a bare area called a keepout. This creates a bright, shiny mark on the PCB that is easy for computer vision algorithms to identify. The most common mark is a 1mm circle surrounded by a 2mm keepout.
+Fiducials are typically created by placing a circular pad on the PCB's outer copper layer surrounded by a keep-out area that is clear of copper and solder mask.  This creates a bright, shiny mark on the PCB that is easy for computer vision algorithms to identify. 
 
 ## Fiducials in OpenPnP
 
-OpenPnP can use 2 or 3 fiducials to detect the position of a PCB on the bed of the machine. This allows for automated, accurate, board locating either during job setup or during job run.
+OpenPnP can use fiducials to automatically and accurately determine a board's location during job setup as well as during a job run.
 
-When 2 fiducials are detected OpenPnP can determine the position and rotation of the PCB. If 3 or more are detected, the best 3 will be used to determine the position, rotation, scale, and shear of the PCB. Using 3 or more will generally produce better results than just 2.
+The OpenPnP vision system expects fiducials to be round. This makes detecting the fiducial easier since it looks the same regardless of its (and the board's) rotation. The recommended fiducial is a round copper pad 1 mm in diameter with a 2 mm diameter keep-out.
+
+OpenPnP needs a minimum of 2 fiducials to estimate a board's location, rotation, and a single average axis scaling difference. With 3 fiducials, OpenPnP can estimate a board's location and rotation, the scaling differences in both the X and Y directions as well as axis non-squareness. With more than 3 fiducials, OpenPnP makes the same estimates as with 3 fiducials, but "averages" the results to help eliminate noise/errors in the measurements of the fiducial locations. It is recommended at least 4 fiducials be used if possible.
 
 A fiducial in OpenPnP is defined by a package with a footprint that specifies what the fiducial looks like. For instance, a 1mm round fiducial is simply a footprint containing a 1x1mm pad with 100% roundness.
 
@@ -19,10 +21,10 @@ You only need to perform this process once per type of fiducial you use.
 1. Create or select an existing Package from the Packages tab.
 2. On the right of the window you should see a Footprint tab. Select this and you will see the Footprint editor.
 3. Set the Body Width and Body Length to 0, and set the Units to the units of your Fiducial.
-4. Click the Add button ![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg) to add a new Pad. A Fiducial will typically have just one pad.
+4. Click the Add button ![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg) to add a new Pad. A fiducial will typically have just one pad.
 5. Set the name of the Pad to anything you like. I typically just use "1".
-6. Set the X and Y position of the Pad to 0, and set the Width and Length to the diameter of the Fiducial. If the Fidicual is round set the Roundness to 100%. For example, a 1mm round fiducial would be defined as X = 0, Y = 0, Width = 1, Length = 1, Roundness = 100%.
-7. Go to the Parts tab and create a new Part to represent your fiducial. This is the part you will assign to placements to represent fiducials on boards. Set it's package to the fiducial package you created.
+6. Set the X and Y position of the Pad to 0, and set the Width and Length to the diameter of the fiducial. If the fidicual is round, set the Roundness to 100%. For example, a 1mm round fiducial would be defined as X = 0, Y = 0, Width = 1, Length = 1, Roundness = 100%.
+7. Go to the Parts tab and create a new Part to represent your fiducial. This is the part you will assign to placements to represent fiducials on boards. Set its package to the fiducial package you created.
 
 ## Using Fiducials in Boards
 
