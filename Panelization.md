@@ -1,3 +1,5 @@
+# THE INFORMATION ON THIS PAGE IS OUTDATED, see [[Panels]] instead
+
 Panelizing is the process of taking a single board design, and replicating it in X and/or Y directions. Assembly houses prefer panelized designs because it lets you take a small board with a few parts and turn it into a large panel with lots of parts, thus minimizing the time related to board changeover. 
 
 ## Panelization Limitations
