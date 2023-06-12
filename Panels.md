@@ -48,16 +48,16 @@ When a large panelized design is sent to a PCB fabrication house, they will want
 
 In OpenPnP, there are two ways to deal with X-Outs:
 
-The first is to simply find the defective boards in the Job table and mark them as disabled (uncheck the Enabled checkbox). In the example below, the job contains two copies of the example panel that was created above. Suppose the second panel has an X-Out in the 5th row 2nd column. As shown below, just find that row in the Job table (being careful to pick the second panel) and disable it:
+The first is to simply find the defective boards in the Job table and mark them as disabled (uncheck the Enabled checkbox). In the example below, the job contains two copies of the example panel that was created above. Suppose the second panel has an X-Out in the 5th row 2nd column. As shown below, just find that row in the Job table (being careful to pick the one on the second panel - if in doubt, hover the mouse pointer over the Id field to see its full Id, in this case Pnl2 ⇒Brd[5,2]) and disable it:
 
 <img width="809" alt="pnp-test-panelizedJobXout1" src="https://github.com/openpnp/openpnp/assets/50550971/8273aa9d-92cf-49ff-9053-ff643adf9ad5">&nbsp;  
 
-The second, and probably easiest, is to do it graphically in Job Viewer. Just open the Job Viewer (by clicking the 
+The second, and probably best way, is to do it graphically in the Job Viewer. Just open the Job Viewer (by clicking the 
 <img width="24" alt="viewerIcon" src="https://github.com/openpnp/openpnp/assets/50550971/3e4b6f48-42ef-4cb2-ac73-2e7d7578132d">
  button), locate the defective board, right-click on it, verify its Id (in this case Pnl2 ⇒Brd[5,2]) in the pop-up menu and uncheck the Enabled checkbox:
 
 <img width="809" alt="pnp-test-panelizedJobXout2" src="https://github.com/openpnp/openpnp/assets/50550971/7bf973ed-bf0c-49f4-ab01-45d21b50d27b">&nbsp;  
 
-Notice that the board in the Job table has become disabled and in the Job Viewer, it is filled with a red hatch pattern so that it is easy to identify as being disabled:
+Notice that the board in the Job table has become disabled and in the Job Viewer, it is filled with a red striped pattern so that it is easy to identify as being disabled:
 
 <img width="809" alt="pnp-test-panelizedJobXout3" src="https://github.com/openpnp/openpnp/assets/50550971/7344975c-de9a-4c63-a046-9c1370d5425c">&nbsp;  
