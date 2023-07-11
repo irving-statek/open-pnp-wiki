@@ -20,7 +20,7 @@ The **Rotation Mode** can now exploit these facts and optimize the way a nozzle 
 
 ### Rotational Axis Limits
 
-In the [ReferenceControllerAxis](https://github.com/openpnp/openpnp/wiki/Machine-Axes#referencecontrolleraxis) configuration, as soon as **Limit to Range** is enabled, the **Soft Limit Low** and **Soft Limit High** are displayed:
+In the [ReferenceControllerAxis](https://github.com/openpnp/openpnp/wiki/Machine-Axes#referencecontrolleraxis) configuration, as soon as **Limit to Range** is enabled, the **Soft Limit Low** and **Soft Limit High** are displayed (the following shows a transformed rotation axis, where 1 unit means 10°, see also next section):
 
 ![ReferenceControllerAxis](https://user-images.githubusercontent.com/9963310/136701242-6cbf8e36-637c-4ee2-8eda-6e1b535f0e88.png)
 
