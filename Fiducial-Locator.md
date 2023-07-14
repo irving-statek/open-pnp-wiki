@@ -35,15 +35,19 @@ If your configuration originally comes from an older OpenPnP version, you might 
 
 1. Make sure to have **View** / **Selections in Tables** / **Linked** enabled.
 1. In the **Placements** table, select the fiducial in question:
+
    ![image](https://github.com/openpnp/openpnp/assets/9963310/4a9ddaba-a6f9-4661-a415-49c8e577da13)
 
 1. Go to the **Parts** tab, the fiducial part should be selected, and then in the drop-down, select the **Stock Fiducial Vision Settings**:
+
    ![image](https://github.com/openpnp/openpnp/assets/9963310/752d96d9-ec4a-49df-99a5-91cb445ec27c)
 
 1. Go to the **Fiducial Vision Settings** detail tab and press the **Specialize for ...** button. This way we're any tweaking will be private to that part:
+
    ![image](https://github.com/openpnp/openpnp/assets/9963310/7b583394-f37c-4c9b-a790-c876e9f5f588)
 
 1. Then press **Pipeline Edit** and note the presence of the **DetectCircularSymmetry** stage that indicates this is the modern stock pipeline:
+
    ![image](https://github.com/openpnp/openpnp/assets/9963310/70dd853a-3a08-49fc-a97d-fcfc52588e28)
 
 1. For troubleshooting, you can enable the "deb0" and "deb1" stages (see in the screenshot above). The vision process will then write debug images to the disk. See [where to find them](https://github.com/openpnp/openpnp/wiki/FAQ#how-can-i-get-a-native-camera-image).
