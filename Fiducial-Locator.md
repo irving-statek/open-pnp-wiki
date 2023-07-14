@@ -98,7 +98,7 @@ The green **Copy** and **Paste** buttons, allow you to transfer pipelines from s
 
 ### Fiducial Locator
 
-The **Max. Vision Passes** determines how many times the Fiducial Locator will try to improve the fiducial detection, iteratively centering-in on the detected fiducial. See the [Operating Principle](#operating-principle].
+The **Max. Vision Passes** determines how many times the Fiducial Locator will try to improve the fiducial detection, iteratively centering-in on the detected fiducial. See the [Operating Principle](#operating-principle).
 
 The **Max. Linear Offset** determines the acceptable residual offset for the fiducial detection. If the residual offset is smaller, then the iteration is stopped early.
 
