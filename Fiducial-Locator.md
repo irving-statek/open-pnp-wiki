@@ -1,8 +1,8 @@
-## What is it?
+# What is it?
 
-The Fiducial Locator is a piece of software inside OpenPnP which detects the precise fiducial location using the down-looking camera. 
+The **Fiducial Locator** is a piece of software inside OpenPnP which detects the precise [[fiducial|Fiducials]] location using the down-looking camera. 
 
-### Operating Principle
+## Operating Principle
 
 1. It first moves the camera to the expected location of the fiducial. This might be slightly off the true location, due to various tolerances in PCB manufacturing, or when mounting the board on your machine. 
 1. The Locator then detects the fiducial location inside the camera view using computer vision. 
@@ -14,7 +14,7 @@ By re-centering the camera on top of the fiducial it can improve the accuracy. T
 
 The re-centering also makes sure that lighting is symmetrical, which might be relevant when the fiducial is very reflective and beveled, which is typically the case for HASL coated PCBs, where the solder coating edges are rounded from surface tension. Asymmetrical lighting might make it appear shifted, inducing positional errors.
 
-### Parallax Operating Principle
+## Parallax Operating Principle
 
 As an option, OpenPnP allows for an alternative "Parallax" detection method. 
 
@@ -29,7 +29,7 @@ The following animation illustrates how the fiducial shows a unenven dark reflec
 ![parallax-animation2](https://github.com/openpnp/openpnp/assets/9963310/855dc087-94c0-47af-a8b5-fc4901b42222)
 
 
-## Using the Stock Vision Settings
+# Using the Stock Vision Settings
 
 If your configuration originally comes from an older OpenPnP version, you might not yet have the new stock fiducial vision enabled. If this is the case, the following will let you try the new visions settings. They can then be made the standard if you're satisfied.
 
@@ -52,9 +52,9 @@ If your configuration originally comes from an older OpenPnP version, you might 
 
 1. Once you're satisfied, you can make it the standard. Use the analog procedure as described for Bottom Vision, [here](https://github.com/openpnp/openpnp/wiki/Computer-Vision#make-stock-vision-the-default).
 
-## Fiducial Vision Settings
+# Fiducial Vision Settings
 
-### Assigning Fiducial Vision Settings
+## Assigning Fiducial Vision Settings
 
 The **Fiducial Vision Settings** can be assigned to parts and packages. Use the drop-down in the table view:
 
@@ -70,7 +70,7 @@ To unassign a setting from a part or package, just select the empty entry from t
 
 For further information about this inheritance principle, please [watch the (rather old) intro video](https://youtu.be/W63GbSf5BHk).
 
-### Configuration
+## Configuration
 
 ![image](https://github.com/openpnp/openpnp/assets/9963310/c217504f-7efb-4b28-aabc-cae73ff21af9)
 
@@ -115,4 +115,4 @@ You can jog-rotate the cross-hairs to measure the angle.
 
 ### Testing the Fiducial Locator
 
-Move the camera near a fiducial and use the **Test Fiducial Locator** button to test the detection and centering. 
+Move the camera crosshairs near a fiducial and use the **Test Fiducial Locator** button to test the detection and iterative centering. 
