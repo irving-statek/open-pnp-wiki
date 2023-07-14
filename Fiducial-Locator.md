@@ -16,20 +16,73 @@ The re-centering also makes sure that lighting is symmetrical, which might be re
 
 ## Enabling the Stock Vision Settings
 
-If your configuration originally comes from an older OpenPnP version, you might not yet have the new stock fiducial vision enabled. 
+If your configuration originally comes from an older OpenPnP version, you might not yet have the new stock fiducial vision enabled. If this is the case, the following will let you try the new visions settings. They can then be made the standard if you're satisfied.
 
-1. Make sure to have **View** /** Selections in Tables** / **Linked** enabled.
+1. Make sure to have **View** / **Selections in Tables** / **Linked** enabled.
 1. In the **Placements** table, select the fiducial in question:
    ![image](https://github.com/openpnp/openpnp/assets/9963310/4a9ddaba-a6f9-4661-a415-49c8e577da13)
 
 1. Go to the **Parts** tab, the fiducial part should be selected, and then in the drop-down, select the **Stock Fiducial Vision Settings**:
    ![image](https://github.com/openpnp/openpnp/assets/9963310/752d96d9-ec4a-49df-99a5-91cb445ec27c)
 
-1. Go to the **Fiducial Vision Settings** detail tab and press the **Specialize for ...** button:
+1. Go to the **Fiducial Vision Settings** detail tab and press the **Specialize for ...** button. This way we're any tweaking will be private to that part:
    ![image](https://github.com/openpnp/openpnp/assets/9963310/7b583394-f37c-4c9b-a790-c876e9f5f588)
 
 1. Then press **Pipeline Edit** and note the presence of the **DetectCircularSymmetry** stage that indicates this is the modern stock pipeline:
    ![image](https://github.com/openpnp/openpnp/assets/9963310/70dd853a-3a08-49fc-a97d-fcfc52588e28)
 
-1. for troubleshooting, you can enable the "deb0" and "deb1" stages (see in the screenshot above). The vision process will then write debug images to the disk. See [where to find them](https://github.com/openpnp/openpnp/wiki/FAQ#how-can-i-get-a-native-camera-image).
+1. For troubleshooting, you can enable the "deb0" and "deb1" stages (see in the screenshot above). The vision process will then write debug images to the disk. See [where to find them](https://github.com/openpnp/openpnp/wiki/FAQ#how-can-i-get-a-native-camera-image).
+
+1. Go on to test the Fiducial Locator as shown in the next section.
+
+## Fiducial Vision Settings
+
+### Assigning Fiducial Vision Settings
+
+The **Fiducial Vision Settings** can be assigned to parts and packages. Use the drop-down in the table view:
+
+![image](https://github.com/openpnp/openpnp/assets/9963310/752d96d9-ec4a-49df-99a5-91cb445ec27c)
+
+There is the default assigned in **Machine Setup / Vision / Fiducial Locator**:
+
+![image](https://github.com/openpnp/openpnp/assets/9963310/03c41f6f-c9ec-4642-b55b-c2bd3e6c62a0)
+
+If a part or package has no setting assigned, it will inherit it from the more general level, a part inherits from its package, a package inherits from the default. 
+
+To unassign a setting from a part or package, just select the empty entry from the drop-down. It will then inherit its settings from the more general level.
+
+For further information about this inheritance principle, please [watch the (rather old) intro video](https://youtu.be/W63GbSf5BHk).
+
+### Configuration
+
+![image](https://github.com/openpnp/openpnp/assets/9963310/c217504f-7efb-4b28-aabc-cae73ff21af9)
+
+### General
+
+**Name** of the vision settings.
+
+**Assigned to** tells you which parts, packages, etc. have this particular **Fiducial Vision Settings** assigned. Always be aware that any changes you apply to these settings, affect all the parts and packages that have the same settings assigned, or inherited.
+
+**Specialize for ...** copies the current vision settings and assigns them to the part, package. So any changes you make will only affect this one part or package (in the latter case it might be inherited by parts with that package).
+
+If **Generalize** is pressed on a package, then the specialized vision settings will be unassigned, and they will now inherit our settings.
+
+If **Generalize**  pressed on the **Machine Setup / Vision / Fiducial Locator** then the specialized vision settings on all the packages and parts will be unassigned. OpenPnP will ask you to confirm this.
+
+**Reset to Default** will overwrite the vision settings to the default as set on **Machine Setup / Vision / Fiducial Locator**. 
+
+**Enabled** allows these vision settings to be used in operation.
+
+**Pipeline Edit** allows you to edit the specific pipeline.
+
+**Pipeline Reset** resets the pipeline to the stock vision pipeline.
+
+The green **Copy** and **Paste** buttons, allow you to transfer pipelines from settings to settings, or to share them in the community.
+
+### Fiducial Locator
+
+
+
+
+
 
