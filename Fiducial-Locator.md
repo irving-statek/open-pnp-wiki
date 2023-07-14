@@ -1,0 +1,35 @@
+## What is it?
+
+The Fiducial Locator is a piece of software inside OpenPnP which detects the precise fiducial location using the down-looking camera. 
+
+### Operating Principle
+
+1. It first moves the camera to the expected location of the fiducial. This might be slightly off the true location, due to various tolerances in PCB manufacturing, or when mounting the board on your machine. 
+1. The Locator then detects the fiducial location inside the camera view using computer vision. 
+1. If it is not satisfied with the accuracy, it updates the expected location to the detected location and repeats the process. This can happen multiple times.
+
+By re-centering the camera on top of the fiducial it can improve the accuracy. This is due to the fact that when the camera is perpendicularly on top of the fiducial, the view of the fiducial is _symmetric_, so any errors due to an inaccurate scale of the camera view will be cancelled out, i.e. the fiducial might appear slightly smaller or larger, but that error is symmetrical all around. An error in scale can in turn come from badly calibrated Units per Pixel, or from a difference in true Z, as shown in this illustration:
+
+![parallax-error](https://github.com/openpnp/openpnp/assets/9963310/511bed57-4013-485b-a68f-925d7af249ae)
+
+The re-centering also makes sure that lighting is symmetrical, which might be relevant when the fiducial is very reflective and beveled, which is typically the case for HASL coated PCBs, where the solder coating edges are rounded from surface tension. Asymmetrical lighting might make it appear shifted.
+
+## Enabling the Stock Vision Settings
+
+If your configuration originally comes from an older OpenPnP version, you might not yet have the new stock fiducial vision enabled. 
+
+1. Make sure to have **View** /** Selections in Tables** / **Linked** enabled.
+1. In the **Placements** table, select the fiducial in question:
+   ![image](https://github.com/openpnp/openpnp/assets/9963310/4a9ddaba-a6f9-4661-a415-49c8e577da13)
+
+1. Go to the **Parts** tab, the fiducial part should be selected, and then in the drop-down, select the **Stock Fiducial Vision Settings**:
+   ![image](https://github.com/openpnp/openpnp/assets/9963310/752d96d9-ec4a-49df-99a5-91cb445ec27c)
+
+1. Go to the **Fiducial Vision Settings** detail tab and press the **Specialize for ...** button:
+   ![image](https://github.com/openpnp/openpnp/assets/9963310/7b583394-f37c-4c9b-a790-c876e9f5f588)
+
+1. Then press **Pipeline Edit** and note the presence of the **DetectCircularSymmetry** stage that indicates this is the modern stock pipeline:
+   ![image](https://github.com/openpnp/openpnp/assets/9963310/70dd853a-3a08-49fc-a97d-fcfc52588e28)
+
+1. for troubleshooting, you can enable the "deb0" and "deb1" stages (see in the screenshot above). The vision process will then write debug images to the disk. See [where to find them](https://github.com/openpnp/openpnp/wiki/FAQ#how-can-i-get-a-native-camera-image).
+
