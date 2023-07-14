@@ -104,7 +104,14 @@ The **Max. Linear Offset** determines the acceptable residual offset for the fid
 
 When the **Parallax Diameter** is given, the Fiduial Locator will automatically switch to the parallax mode and perform its detection from two parallax camera view-points on both sides of the expected location of the fiducial. The distance between the two is set by the **Parallax Diameter**.
 
-The **Parallax Angle** determines the angle at which the opposite view-points are spaced from each other. Choose an angle which favors the faster axis of your machine: 0° favors X, 90° favors Y. Other angles might be used to target a specific LED pair in a LED ring reflection.
+The **Parallax Angle** determines the angle at which the opposite view-points are spaced from each other. Choose an angle which favors the faster axis of your machine: 0° favors X, 90° favors Y. 
+
+Other angles might be used to target a specific pair of LEDs of a LED ring reflection, i.e., where the reflection is brightest and most symmetrical around the spot:
+
+![Angled Parallax](https://github.com/openpnp/openpnp/assets/9963310/28baf24b-18b1-432d-b3dc-a2bf57ff1af1)
+
+You can jog-rotate the cross-hairs to measure the angle.
+
 
 ### Testing the Fiducial Locator
 
