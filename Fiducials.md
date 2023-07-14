@@ -16,7 +16,7 @@ A fiducial in OpenPnP is defined by a package with a footprint that specifies wh
 
 ## Creating a Fiducial Package
 
-You only need to perform this process once per type of fiducial you use.
+For some E-CADs, OpenPnP can import the fiducial shape (footprint) automatically with the placements. Otherwise, you need to create them manually. You only need to perform this process once per package (type of fiducial).
 
 1. Create or select an existing Package from the Packages tab.
 2. On the right of the window you should see a Footprint tab. Select this and you will see the Footprint editor.
@@ -31,6 +31,10 @@ You only need to perform this process once per type of fiducial you use.
 Once you have defined your fiducial part, package and footprint you are ready to use it. You can assign that part to any placement in your board and set the placement type to Fiducial. This will tell OpenPnP to consider this placement for any fiducial operation it needs. You should set at least two placements as Fiducials.
 
 For additional information on using your fiducials, please watch this video tutorial showing how to use fiducials: https://www.youtube.com/watch?v=xvmdvTroZj8
+
+## The Fiducial Detector
+
+The computer vision that is used to detect fiducials is described on the separate [[Fiducial Locator]] page.
 
 ## Troubleshooting
 
