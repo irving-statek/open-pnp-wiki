@@ -24,7 +24,7 @@ By detecting fiducials from a parallax view-point, the fiducial appears at an an
 
 ![image](https://github.com/openpnp/openpnp/assets/9963310/f7371c5b-bff5-4350-9048-8338843ce922)
 
-The following animation shows how the fiducial shows a unenven dark center reflection when seen centered, but is lit fully when seen at a parallax. 
+The following animation illustrates how the fiducial shows a unenven dark reflection when seen centered, but is lit fully when seen at a parallax distance: 
 
 ![parallax-animation2](https://github.com/openpnp/openpnp/assets/9963310/855dc087-94c0-47af-a8b5-fc4901b42222)
 
