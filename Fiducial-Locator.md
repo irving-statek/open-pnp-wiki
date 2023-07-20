@@ -1,10 +1,10 @@
 # What is it?
 
-The **Fiducial Locator** is a piece of software inside OpenPnP which detects the precise [[fiducial|Fiducials]] location using the down-looking camera. 
+The **Fiducial Locator** is a piece of software inside OpenPnP which detects the precise [[fiducial|Fiducials]] location using the down-looking camera. Fiducials are primarily used to pinpoint the exact position and rotation of a PCB, but other use cases like [[Visual Homing]] are also covered.
 
 ## Operating Principle
 
-1. It first moves the camera to the expected location of the fiducial. This might be slightly off the true location, due to various tolerances in PCB manufacturing, or when mounting the board on your machine. 
+1. It first moves the camera to the expected location of the fiducial. This might be slightly off the true location. In case of PCBs this might be caused by tolerances in manufacturing, or by hand-mounting the board on your machine. 
 1. The Locator then detects the fiducial location inside the camera view using computer vision. 
 1. If it is not satisfied with the accuracy, it updates the expected location to the detected location and repeats the process. This can happen multiple times.
 
@@ -119,6 +119,8 @@ Other angles might be used to aim for a specific pair of LEDs of a LED ring refl
 ![Angled Parallax](https://github.com/openpnp/openpnp/assets/9963310/28baf24b-18b1-432d-b3dc-a2bf57ff1af1)
 
 You can jog-rotate the cross-hairs to measure the angle.
+
+![parallax-animation-angled](https://github.com/openpnp/openpnp/assets/9963310/a08b4ef1-4ea6-40f7-93ca-10dc4f7a42fd)
 
 
 ### Testing the Fiducial Locator
