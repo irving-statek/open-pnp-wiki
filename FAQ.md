@@ -89,7 +89,7 @@ Make sure your Camera View shows the relevant situation. Then double click on th
 
 The snapshot image is written to the `snapshots` subfolder, inside your OpenPnP configuration folder. See [Where are configuration and log files located?](#where-are-configuration-and-log-files-located)
 
-Some computer vision pipelines contain "ImageDebugWrite" stages, that you can enable to automatically write relevant pipeline images to the disk during normal operation. Those are saved in the `org.openpnp.vision.pipeline.stages.ImageWriteDebug` subfolder.
+Some computer vision pipelines contain `ImageWriteDebug` stages, that you can enable to automatically write relevant pipeline images to the disk during normal operation. Those are saved in the `org.openpnp.vision.pipeline.stages.ImageWriteDebug` subfolder.
 
 If you send the camera image to the [Discussion Group](http://groups.google.com/group/openpnp), it is best to also state your camera's **Units per Pixel**. Knowledgeable users in the discussion group can then reconstruct your basic camera situation inside a [[Computer Vision Pipeline|CVPipeline]].
 
