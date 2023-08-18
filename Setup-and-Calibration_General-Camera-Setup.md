@@ -8,6 +8,9 @@ If using [[Issues and Solutions]] you can **skip the following two sections**.
 
 ## Add a New Camera
 
+Before you do this manually, please read about the automatic setup by Issues & Solutions at the top of this page. 
+___
+
 1. Open the Machine Setup tab.
 2. 
     * If you are adding a head mounted camera (down looking, fiducial), find the head in the tree on the left. Under the head look for Cameras and select it.
@@ -24,6 +27,9 @@ If using [[Issues and Solutions]] you can **skip the following two sections**.
 6. On the General Configuration tab click the name field in the camera table to give your camera a descriptive name. We suggest "Top Camera" and "Bottom Camera", respectively.
 
 ## Delete Old Camera
+
+Before you do this manually, please read about the automatic setup by Issues & Solutions at the top of this page. 
+___
 
 When you first install OpenPnP it comes with a set of defaults that simulate a machine so that you can try it out. When you start to set up OpenPnP for your real machine, you need to remove some of those defaults so they don't interfere with your machine.
 
