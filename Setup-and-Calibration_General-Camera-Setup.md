@@ -8,7 +8,7 @@ If using [[Issues and Solutions]] you can **skip the following two sections**.
 
 ## Add a New Camera
 
-Before you do this manually, please read about the automatic setup by Issues & Solutions at the top of this page. 
+For the default Top and Bottom cameras, please read about the automatic setup by Issues & Solutions at the top of this page, before doing this manually.
 ___
 
 1. Open the Machine Setup tab.
@@ -28,7 +28,7 @@ ___
 
 ## Delete Old Camera
 
-Before you do this manually, please read about the automatic setup by Issues & Solutions at the top of this page. 
+For the default Top and Bottom cameras, please read about the automatic setup by Issues & Solutions at the top of this page, before doing this manually.
 ___
 
 When you first install OpenPnP it comes with a set of defaults that simulate a machine so that you can try it out. When you start to set up OpenPnP for your real machine, you need to remove some of those defaults so they don't interfere with your machine.
