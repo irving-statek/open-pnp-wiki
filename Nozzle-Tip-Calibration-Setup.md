@@ -57,7 +57,11 @@ This is only needed for the first or "best" nozzle and nozzle tip. If the machin
 
 # Advanced Calibration Setup
 ## Calibration Z Offset
-On some nozzle tips the feature best captured by computer vision may be a bit up on the nozzle tip. For instance a large cup shaped nozzle tip might have an air hole receded quite a bit. For best precision and focus you can compensate that with the Calibration Z Offset.
+Whenever possible, you should aim to detect an edge/contour (outer or inner diameter) that delineates the lower-most contact surface on the nozzle tip. When a part is picked, it will come into contact with the lower-most surface, so this is where we want to measure the run-out. Therefore, whenever possible, you should _not_ actually use a **Calibration Z Offset**. 
+
+Having said that, there are basically two use cases for the **Calibration Z Offset**:
+- To calibrate the bare nozzle, see the [section treating this, below](#calibrating-the-bare-nozzle).
+- On some nozzle tips the contact surface contour might not have a sharp enough edge, or might otherwise be hard to reliably detect in computer vision. So it might be better to detect a sharper contour that happens to be further up Z. For instance a large "rubberized" cup shaped nozzle tip might have an air hole receded quite a bit. For best precision and focus you can compensate that with the **Calibration Z Offset**.
 
 ## Automatic Recalibration
 OpenPNP will automatically recalibrate the nozzle tips as needed. The following triggers can be defined:
