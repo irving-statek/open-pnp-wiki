@@ -71,8 +71,17 @@ For machines that have very large runout in the nozzle it might be imperative th
 
 On the "unloaded" nozzle tip's Calibration Wizard, setup the pipeline and other settings as usual. Use the Calibration Z Offset to account for the missing tip on the nozzle and to bring it down into the focal plane of the bottom camera. OpenPNP will safely suppress any changer motion for this pseudo nozzle tip. 
 
+## Background Calibration
+
+See the [[Nozzle Tip Background Calibration]] page.
+
+
 ## Pipeline
-Nowadays, the nozzle tip calibration uses the a self-tuning **Circular Symmetry** pipeline [(also posted and explained here)](https://github.com/openpnp/openpnp/wiki/DetectCircularSymmetry#nozzle-tip-calibration). The needed **Vision Diameter** is automatically set up if you simply follow [[Issues and Solutions]], which is very much recommeneded. 
+Nowadays, the nozzle tip calibration uses the a self-tuning **Circular Symmetry** pipeline [(also posted and explained here)](https://github.com/openpnp/openpnp/wiki/DetectCircularSymmetry#nozzle-tip-calibration). The needed **Vision Diameter** is automatically set up when you simply follow [[Issues and Solutions]], which is very much recommended. 
+
+If you want to make sure to have the newest self-tuning pipeline, just switch the **Automatic Recalibration** to **None**. Then go to the Issues & Solutions tab and press **Find Issues & Solutions**. Select the proposed solutions and follow the instructions.
+
+The following is just for older versions of OpenPnP:
 
 ___
 
@@ -103,7 +112,3 @@ Most relevant parameters: threshold value, mask circle diameter, houghcircle dia
 
 ### Samsung CP40
 These nozzle tips are low contrast black on black. Not easy. Be sure to set your camera to manual exposure for repeatable results. Use the air hole as the detection feature as it tends to be the darkest area. Set the threshold so only the hole is masked. Increase the MedianBlur kernel size for more noise removal. Set the Hough Circle min/max diameter only a few pixels below/above the true hole diameter. Use a min distance similar to the hole diameter. Use a tight MaskCircle to remove any peripheral dark edged. Note that while editing/testing the pipeline, you can still operate the machine controls, so be sure to rotate the nozzle and refresh the image many times, testing the pipeline reliability. 
-
-## Background Calibration
-
-See the [[Nozzle Tip Background Calibration]] page.
