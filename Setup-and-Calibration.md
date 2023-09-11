@@ -10,7 +10,12 @@ In recent versions of OpenPnP, the [[Issues and Solutions]] system can guide you
 
 Whenever OpenPnP starts up, or when you press **Find Issues & Solutions**, it will scan your configuration for any issues and solutions. A notifier dot will appear on the tab, when unresolved items are present. The system is very flexible, you can skip over steps and proceed to the next. OpenPnP will keep monitoring your configuration and list issues as long as unsolved. It will also detect issues if they are (re-) introduced later.
 
-Consider the [[Issues and Solutions]] system as a more up-to-date/smarter alternative to the **Table of Contents** of this Wiki. Instead of working linearly through this document, follow [[Issues and Solutions]] and then use the blue information buttons to link back to this Wiki for details.  
+Consider the [[Issues and Solutions]] system as a more up-to-date/smarter alternative to the **Table of Contents** of this Wiki. Instead of working linearly through this document, follow [[Issues and Solutions]] and then use the blue information buttons to link back to this Wiki for details.
+
+To get an impression, before you even start, watch the following videos. Note: they only cover a small subset of the available solutions, and they're already a bit outdated, i.e., Issues & Solutions has since evolved to be even better:
+
+- [Automatic machine calibration](https://youtu.be/md68n_J7uto)
+- [More machine setup guidance](https://youtu.be/Pxg6g3KI5_E)
 
 ### Next Step: [[Issues and Solutions]]
 
