@@ -25,7 +25,9 @@ Give it a meaningful name and under 'Script Name' enter the name of the actual s
 
 Write the script which will perform the action you require and put it in the top scripts directory.  This is the directory that opens when you select scripts > Open Scripts Directory usually `YourUserName>.openpnp2>scripts`.  Do not put it in the `events` sub-directory.
 
-Here is an example script that determines which nozzle is in play, moves the head a certain amount, actuates the solenoid, waits a bit, then deactivates the solenoid and returns to the original position.
+The script is parametrized with either the variable `actuateBoolean`, `actuateDouble`, or `actuateString`, depending on the actuator's **Value Type**. The typed variable is set to the actual value the actuator is actuated with.
+
+Here is an example script that determines which nozzle is in play, moves the head a certain amount, actuates the solenoid, waits a bit, then deactivates the solenoid and returns to the original position. Side note: this script does not use the value variable (some actuators just "do" something, whenever actuated).
 
 ```js
 // Import some OpenPnP classes we'll use
