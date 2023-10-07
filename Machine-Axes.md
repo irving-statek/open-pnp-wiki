@@ -79,7 +79,7 @@ If this is not configured right, you typically get timeout errors, i.e. your spe
 
 The larger the **Resolution** tick is, the more often OpenPnP can omit unnecessary micro axis moves, especially in the small adjustments of non-squareness compensation, nozzle tip runout compensation etc. By omitting micro axis moves, OpenPnP can also prevent extra backlash compensation moves, thus save motion time. Set the Resolution to a multiple of the micro-step displacement that makes sense in terms of needed precision for PnP, i.e. typically in the order of a few 0.01mm. 
 
-When expressed in the format of the G-Code `MOVE_TO_COMMAND`, which defaults to %.4f, which can express 0.0001 driver units, any expressed coordinate should always change with each "tick" (however, it does not matter if the coordinate is rounded on lesser digits).
+Note: dependent on the **Resolution** given here, [[Issues and Solutions]] will also propose the right decimal format (precision) for the driver G-Code `MOVE_TO_COMMAND` (and others). Coordinates encoded as G-code decimals must always change with each "tick", however, it does not matter if it they are rounded on lesser digits. Using shorter decimal encoding allows for better command throughput and more buffering in controllers, important, when using [Motion Interpolation](GcodeAsyncDriver#interpolation). [[Issues and Solutions]]'s proposal automatically makes sure of all that.
 
 ### Controller Settings (Rotational Axis)
 
