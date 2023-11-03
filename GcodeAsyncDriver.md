@@ -65,6 +65,8 @@ to the controller:
 
    This will reduce vibrations to a degree.
 
+   Why? The moderation means that short moves accelerate more gently, as the acceleration is quickly followed by deceleration, which seems to agitate the machine more. Long moves are allowed to accelerate and decelerate much harder, but as they do so longer, this seems to induce less vibrations. If you think of the acceleration/deceleration ramp as a "half wave", the long move has a longer wave-length i.e. lower frequency and therefore seems to [resonate](https://en.wikipedia.org/wiki/Resonance) less with the machine frame. Well, it helps on my machine.
+
 * **SimpleSCurve:**
 
    Apply motion planning assuming a controller with simplified S-Curve motion control. 
