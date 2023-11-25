@@ -207,7 +207,7 @@ Assign the Z and Rotation virtual axes to the camera (see also the [[Mapping Axe
 Among other things, the virtual Z axis is used to set the correct viewing plane, see the separate [[3D Units per Pixel]] page.
 
 ### Use Case / Example
-Its purpose is to store or prepare a coordinate for Z or C while working with the camera as the selected tool in the Machine Controls. 
+The ReferenceVirtualAxis' purpose is to store or prepare a coordinate for Z or C while working with the camera as the selected tool in the Machine Controls. 
 
 ![Virtual Machine Controls](https://user-images.githubusercontent.com/9963310/95972631-fa82ac00-0e12-11eb-8cbd-7df0018b6677.png) 
 
