@@ -238,6 +238,8 @@ The columns shown in the Placements table are:
 Placements are usually added to a board definition by clicking the <img src="https://user-images.githubusercontent.com/50550971/219510059-f5beb137-61dc-4d74-b4e4-ec2b856041fd.svg" width="16" height="16"> button just above the placements table to [import placement data from your CAD software](https://github.com/openpnp/openpnp/wiki/Importing-Centroid-Data). After the import is finished, check the list of placements and make any corrections - typically fiducials will need to have their type changed from Placement to Fiducial. Placements can also be added manually by clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button and filling out the different fields appropriately. Placements can be deleted by selecting one or more in the table and clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-remove.svg" width="16" height="16"> button. Clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/219733808-7073db8a-33b4-4156-8e49-b9987c8a43ac.svg" width="16" height="16"> button opens the Board Viewer that displays a graphical layout of the placements on the board.
 
+If one or more Placements are selected in the Placements table, right-clicking on any of the selected placements opens a pop-up menu that allows the side, type, enabled status, or error handling action of all the selected Placements to be changed in one user action.
+
 ## Panels
 
 Panel definitions are the "blueprints" that tell OpenPnP how boards and/or subpanels are arranged to form a panel. Panel definitions are stored in files with the extension `.panel.xml`.
@@ -261,7 +263,7 @@ When a Panel is selected in the list, the middle table of the tab shows the pane
 
 The columns shown in the Children table are:
 - **Board/Panel ID**: This is a user defined identifier for the child. This needs to be unique for each child of a panel.
-- **Name**: This is the name of the child's definition. This value is set when the child is added to the panel and is not editable here.
+- **Name**: This is the name of the child's definition. This value is set when the child is added to the panel. It can be changed by right-clicking on the child and selecting the Replace child(ren)... option from the pop-up menu.
 - **Width**: This is the width of the child - this value is taken from the child's definition and is not editable here.
 - **Length**: This is the length of the child - this value is taken from the child's definition and is not editable here.
 - **Side**: This field defines which side of the child faces the top side of the panel.
@@ -272,6 +274,8 @@ The columns shown in the Children table are:
 There are a couple of options for adding children to a panel definition. A board or panel (known as a subpanel) can be manually added to the panel definition by clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button just above the list and editing the fields in the table appropriately. Arrays of boards or subpanels can be generated and added to the panel by selecting a single child in the table (this child will be replicated multiple times to create the array) and clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/219877700-a4919bd0-ba2e-430f-bb7e-63b6ac1d615a.svg" width="16" height="16"> button. This opens a dialog that allows the number of rows and columns as well as the spacing of the rows and columns to be defined, see [Creating Arrays](https://github.com/openpnp/openpnp/wiki/Panels#creating-arrays) for additional information. Children can be deleted by selecting one or more in the Children table and clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-remove.svg" width="16" height="16"> button. Clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/219733808-7073db8a-33b4-4156-8e49-b9987c8a43ac.svg" width="16" height="16"> button opens the Panel Viewer that displays a graphical layout of the panel showing its children and fiducials.
+
+If one or more children are selected in the Children table, right-clicking on any of the selected children opens a pop-up menu that allows the children's definition, side, enabled status, or check fiducial status of all the selected children to be changed in one user action.
  
 At the bottom of the Panels tab is a table showing the selected panel's fiducials. A panel can have dedicated fiducials to use for aligning it on the machine or it may use the fiducials located on its children (with respect to the panel, these are referred to as pseudo-fiducials). Even without fiducials, a panel can be aligned on the machine by using the manual multi-placement alignment process on a selected set of the children's placements (with respect to the panel, these are referred to as pseudo-placements).
 
@@ -284,6 +288,8 @@ The columns shown in the Alignment Fiducials/Placements table are:
 
 A dedicated panel fiducial can be manually added to the panel by clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button just above the list and editing the fields in the table appropriately. Pseudo-fiducials or pseudo-placements can be added to the panel by clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/219879316-44c500da-afe8-49b4-9f9e-f9478e61a8f1.svg" width="16" height="16"> button and following the instructions in the dialog box. Fiducials can be removed by selecting one or more in the list and clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-remove.svg" width="16" height="16"> button.
+
+If one or more items are selected in the Alignment Fiducials/Placements table, right-clicking on any selected item opens a pop-up menu which allows the side or enabled status to be changed on all selected items through one user action.
 
 ## Job Definition
 
@@ -311,7 +317,7 @@ The columns shown in the job table are:
 
 *Actually, editing the width and length of a board directly from the Job tab is supported under limited conditions - these fields can be edited only if there are no other instances of the board definition in the job and it is at the top-level of the job (not part of a panel).
 
-Boards and/or panels are added to the job table by clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button just above the list. If the [Recommended Workflow](#recommended-workflow) is being followed, all board and/or panel definitions required for the job will have already been created so use the Existing Board... or Existing Panel... submenu options. Alternatively, boards and/or panels without existing definitions can be added with the New Board... or New Panel... submenu options (new entries for these will be created on their respective tab and will require additional editing there to complete their definitions).
+Boards and/or panels are added to the Job table by clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button just above the list. If the [Recommended Workflow](#recommended-workflow) is being followed, all board and/or panel definitions required for the job will have already been created so use the Existing Board... or Existing Panel... submenu options. Alternatively, boards and/or panels without existing definitions can be added with the New Board... or New Panel... submenu options (new entries for these will be created on their respective tab and will require additional editing there to complete their definitions).
 
 For each board or panel added to the job definition, use the dropdown menu to set the Side to match the side of the physical board or panel that is facing **up** on the machine.
 
@@ -325,6 +331,8 @@ To obtain a more precise location for the board or panel, a fiducial check (assu
 
 Clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/221362638-1e14fe19-df5b-4403-a759-d2fa65445de3.svg" width="16" height="16"> button opens a viewer that displays a graphical representation of the boards and panels as they are laid-out on the machine. 
+
+If one or more items are selected in the job table, right-clicking on any of the selected items opens a pop-up menu that allows the side, enabled status, or check fiducial status of all the selected items to be changed in one user action.
 
 When a single board or panel is selected in the job table, the lower half of the Job tab displays the list of placements for that board or panel.
 
@@ -340,7 +348,6 @@ The columns shown in the Placements table are:
 - **Error Handling**: Sets the action to take if an error occurs during a job when this placement is being placed. Can be set to either _Alert_ (meaning to pause the job and wait for the operator to take action) or _Defer_ (meaning to skip the placement and to continue with the rest of the job). Note, this setting can be overridden on an instance-by-instance basis from the Job tab.
 - **Comments**: A freeform text field that can contain any user definable text. This value is set by the board or panel's definition and is not editable here*.
 
-
 *Actually, adding, editing, and deleting placements directly from the Job tab is supported under limited conditions - these fields can be edited only if there is exactly one instance of the selected board in the job and it is at the top-level of the job (not part of a panel).
 
 A new placement is added to the table by <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-add.svg" width="16" height="16"> button just above the list. One or more placements can be deleted by selecting them in the table and then clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/general-remove.svg" width="16" height="16"> button. Note, these buttons are only enabled if there is exactly one instance of the selected board in the job and it is at the top-level of the job (not part of a panel). If those conditions are not met, adding or deleting placements must be done on the Boards or Panels tabs.
@@ -353,6 +360,7 @@ Clicking the <img src="https://rawgit.com/openpnp/openpnp/develop/src/main/resou
 Clicking the 
 <img src="https://user-images.githubusercontent.com/50550971/221439294-1d58aebf-3f7e-4464-98a0-3727b0a1498e.svg" width="16" height="16"> button opens the Feeders tab and selects the feeder that will supply the part for the placement or prompts the operator to create a feeder for the part if one doesn't exist.
 
+If one or more Placements are selected in the Placements table, right-clicking on any of the selected placements opens a pop-up menu that allows the type, side, placed status, enabled status, or error handling action of all the selected Placements to be changed in one user action.
 
 ## Parts
 
