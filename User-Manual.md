@@ -454,6 +454,8 @@ Once all your placements are showing Ready in the status field, it's time to sta
 
 You run jobs from the Job tab. The Start![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/control-start.svg), Pause ![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/control-pause.svg), Stop ![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/control-stop.svg), and Step ![](https://rawgit.com/openpnp/openpnp/develop/src/main/resources/icons/control-next.svg) buttons let you control the job as it progresses. Pressing Start will start the job and if there are no errors the machine will run the job to completion and then stop automatically.
 
+In depth information about job processing can be found [here](https://github.com/openpnp/openpnp/wiki/Job-Processing).
+
 ## Monitoring
 
 As the job progresses, you can see how it's going by looking at the status bar at the bottom of the main window. 
