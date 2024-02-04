@@ -259,18 +259,23 @@ The **Speed** fields can be used to control the speed factor of the motion betwe
 
 All these Locations are handled like the Pick and Sprocket Hole Locations discussed in the [[Locations|ReferencePushPullFeeder#locations]] section above i.e. they are automatically vision calibrated and automatically transformed if a feeder is moved around on the machine e.g. by OCR detection or if a new feeder is created from a template. This even supports rotation, so if a "west" feeder is later loaded at a "south" slot, this is not a problem. 
 
+## Extended Options
+
 ### Apply Vision Calibration, Not?
 
-Sometimes it is better to _not_ calibrate a coordinate axis of the push-pull motion. This is the case when the motion directly transports the tape such as in drag feeding. In this case it is better to _disable_ **Vision Calibrate?** for the coordinate going into the direction of transport. Otherwise, the drag might be offset more and more, as errors accumulate. 
+For some types of feeders, it is better to _not_ calibrate a coordinate axis of the push-pull motion. This is the case when the motion _directly_ transports the tape such as in **drag feeding**. In this case it is better to _disable_ **Vision Calibrate?** for the coordinate going into the direction of transport. Otherwise, the drag might be offset more and more, as errors accumulate. 
 
 Note, if you _disable_ **Vision Calibrate?**, the transport motion will be applied "blindly" in the said coordinate, but this is likely OK, as the feeder will allow for some tolerances. For example, the drag needle is typically smaller in diameter than the sprocket hole it engages with. Make sure to make the insertion point go into the center of any wiggle room. 
 
 ![Vision Calibrate](https://user-images.githubusercontent.com/9963310/183599853-fb1adc39-c3c9-4bb9-847f-28f98283be8c.png)
 
+To be clear: for the 3D-printed PushPullFeeder, these should always remain ON.
 
 ### Coordinated Peeling
 
-Cover tape peeling can be done using motion that is coordinated with the push-pull articulation, as needed for drag feeders etc. This allows for an elaborate and coordinated motion pattern. Furthermore, it performs the peeling motion _in parallel_ with the other feeding articulation, potentially saving time. 
+Some machines/feeders have a central or dedicated peeling axis, i.e. a motor that can pull off/wind up the protective film from the tape. With the ReferencePushPullFeeder, peeling can be done using motion that is coordinated with the push-pull articulation. This can be advantageous for drag feeders etc. This allows for an elaborate and coordinated motion pattern. Furthermore, it performs the peeling motion _in parallel_ with the other feeding articulation, potentially saving time. 
+
+To be clear: for the 3D-printed PushPullFeeder you do not need such a separate peeler axis/motor, the peeling is actuated through the lever, and made to go one way by the ratchet.
 
 #### Peeler Axis
 
