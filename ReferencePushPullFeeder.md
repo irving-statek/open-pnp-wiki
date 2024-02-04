@@ -275,9 +275,9 @@ To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-
 
 Some machines/feeders have a central or dedicated peeling axis, i.e. a motor that can pull off/wind up the protective film from the tape. With the ReferencePushPullFeeder, peeling can be done using motion that is coordinated with the push-pull articulation. This can be advantageous for drag feeders etc. This allows for an elaborate and coordinated motion pattern. Furthermore, it performs the peeling motion _in parallel_ with the other feeding articulation, potentially saving time. 
 
-To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-printed-tapereel-feeder/399/) you do not need such a separate peeler axis or motor, the peeling is actuated through the lever, made to go one-way only, by the ratchet.
+To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-printed-tapereel-feeder/399/) you do not need such a separate peeler axis or motor, instead the peeling is done through lever-ratchet-clutch action.
 
-#### Peeler Axis
+#### Peeler Axiscltch
 
 Create a rotation axis for the peeler. Make sure to _disable_ the **Limit to Range** and **Wrap Around** options, as we want continuous wind-up of the peeled-off cover tape:
 
