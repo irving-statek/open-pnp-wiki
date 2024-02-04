@@ -269,13 +269,13 @@ Note, if you _disable_ **Vision Calibrate?**, the transport motion will be appli
 
 ![Vision Calibrate](https://user-images.githubusercontent.com/9963310/183599853-fb1adc39-c3c9-4bb9-847f-28f98283be8c.png)
 
-To be clear: for the 3D-printed PushPullFeeder, these should always remain ON.
+To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-printed-tapereel-feeder/399/), both **Vision Calibrate?** checkboxes should always remain ON.
 
 ### Coordinated Peeling
 
 Some machines/feeders have a central or dedicated peeling axis, i.e. a motor that can pull off/wind up the protective film from the tape. With the ReferencePushPullFeeder, peeling can be done using motion that is coordinated with the push-pull articulation. This can be advantageous for drag feeders etc. This allows for an elaborate and coordinated motion pattern. Furthermore, it performs the peeling motion _in parallel_ with the other feeding articulation, potentially saving time. 
 
-To be clear: for the 3D-printed PushPullFeeder you do not need such a separate peeler axis/motor, the peeling is actuated through the lever, and made to go one way by the ratchet.
+To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-printed-tapereel-feeder/399/) you do not need such a separate peeler axis or motor, the peeling is actuated through the lever, made to go one-way only, by the ratchet.
 
 #### Peeler Axis
 
