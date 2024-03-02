@@ -13,6 +13,8 @@ For ReferenceStripFeeder the ‘Direction of Travel’ and ‘Direction of Feed�
 
 ## CvPipeline
 
+If your pipeline is not working, look at the [DetectCircularSymmetry](https://github.com/openpnp/openpnp/wiki/DetectCircularSymmetry) method, more specifically copy the Pipeline for the [ReferenceStripFeeder](https://github.com/openpnp/openpnp/wiki/DetectCircularSymmetry#referencestripfeeder).
+
 A CvPipeline can be customized to clean up the camera image for improved recognition. The pipeline can be configured by clicking Edit Pipeline in the feeders configuration.
 
 The final pipeline stage (with detected circles) should have the name 'results' (plural, lower-case, no quotes). For detecting the feeding circles in the tape, DetectFixedCirclesHough should be used - if it isn't finding the correct circles either your camera's units-per-pixel is set incorrectly or you need to do further clean up of the camera image first.
