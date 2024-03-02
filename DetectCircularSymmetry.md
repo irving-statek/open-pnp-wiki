@@ -165,7 +165,7 @@ Standard pipeline (Edit the pipeline and paste this using the ![Paste](https://u
 
 ## ReferenceStripFeeder 
 
-The ReferenceStripFeeder sets the **diameter** to be detected, i.e. the sprocket hole diameter according to the EIA 481 standard. A relatively accurate camera units per pixel setting is required and the tape surface needs to be near the camera focal plane in Z. 
+The ReferenceStripFeeder sets the **diameter** to be detected, i.e. the sprocket hole diameter according to the EIA 481 standard. A relatively accurate camera units per pixel setting is required, and if your feeder Z is not at PCB level, then be sure to have 3D calibration of the camera (primary and secondary Z calibration), best done using [Issues & Solutions Vision Solutions](https://github.com/openpnp/openpnp/wiki/Vision-Solutions). 
 
 The ReferenceStripFeeder also controls the **maxDistance** search range: full camera scope for Auto Setup and an optimized minimal search range for routine detection of the nearest hole.
 
