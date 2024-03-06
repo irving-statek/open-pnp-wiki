@@ -121,7 +121,7 @@ The settings of the "Part Off" test in [Vacuum Sensing](https://github.com/openp
     
     CAUTION: Z offsets from probing _once_ will subsequently be applied quietly, _for ever_. You might forget it is applied, and when you later modify the feeder/machine geometry etc. this might appear as _seemingly_ broken behavior. Look for applied offsets in the log at TRACE level (search for "applies feeder" or "applies part"). To get rid of any stored Z probing data, switch to **Off** and home the machine.
 * **AfterHoming** probes for fresh Z offsets per feeder/per part once after having homed the machine.  
-* **Each Time** probes for Z offsets in all picks/placements. This is the most tolerant setting, but also likely the slowest. It can even equalize feeders and/or a PCB that are not planar in Z (a bit like Z probing on a 3D printer).
+* **Each Time** probes for Z offsets in all picks/placements. This is the most tolerant setting, but also likely the slowest. It can even equalize feeders and/or a PCB that are not planar in Z (a bit like bed leveling on a 3D printer).
 
 **Calibration Z Offset** shows the last Z calibration result for this nozzle with the current nozzle tip attached. See also the Nozzle Tip Probing Configuration.
 
