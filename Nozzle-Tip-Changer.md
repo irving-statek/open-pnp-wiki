@@ -9,7 +9,7 @@ The following shows a nozzle tip load and Z probe motion sequence.
 
 ## Four Positions
 
-OpenPnP supports the so-called "Four Positions" changer style. You can configure four motions that load a nozzle tip. To unload a nozzle tip, the four position motions are executed in reverse. You can set the relative speed between the way-points. Furthermore, an actuator can be actuated in between.
+OpenPnP supports the so-called "Four Positions" changer style. You can configure four motions that load a nozzle tip. To unload a nozzle tip, the four position motions are executed in reverse. You can set the relative speed between the way-points. Furthermore, actuators can be actuated in between. This actuators are of boolean style and actuated True on load and False on unload.
 
 ![Four Positions](https://user-images.githubusercontent.com/9963310/118364459-c59d2a00-b598-11eb-95bc-a8f77163e620.png)
 
