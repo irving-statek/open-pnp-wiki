@@ -65,10 +65,10 @@ Having said that, there are basically two use cases for the **Calibration Z Offs
 
 ## Automatic Recalibration
 OpenPNP will automatically recalibrate the nozzle tips as needed. The following triggers can be defined:
-* On Each Nozzle Tip Change: Whenever a nozzle tip is changed, it is immediately calibrated. This also happens when the machine is homed, and a nozzle tip is already loaded.
-* On Each Nozzle Tip Change in a Job: Whenever a nozzle tip is changed inside a job, it is calibrated. This also happens when a nozzle tip was already loaded when the job starts. However no automatic calibration is done outside the job. 
-* On Machine Homing: When the machine is homed, all the currently loaded nozzle tips are calibrated. When other nozzle tips are later loaded for the first time, they are also calibrated. However once a tip is calibrated it will retain the calibration through all unload/load operations. 
-* Manual: Nozzle tips are only calibrated manually. The calibration is stored in the machine.xml and will be reused even if OpenPNP was closed and restarted. This only works correctly for machines that have homed rotation axes. 
+* **On Each Nozzle Tip Change**: Whenever a nozzle tip is changed, it is immediately calibrated. This also happens when the machine is homed, and a nozzle tip is already loaded.
+*** On Each Nozzle Tip Change in a Job**: Whenever a nozzle tip is changed inside a job, it is calibrated in its proper Job Processor step. This also happens when a nozzle tip was already loaded when the job starts. However no automatic calibration is done outside the job. 
+* **On Machine Homing**: When the machine is homed, all the currently loaded nozzle tips are calibrated. When other nozzle tips are later loaded for the first time, they are also calibrated. However once a tip is calibrated it will retain the calibration through all unload/load operations. 
+* **Manual**: Nozzle tips are only calibrated manually. The calibration is stored in the machine.xml and will be reused even if OpenPNP was closed and restarted. This only works correctly for machines that have homed rotation axes. 
 
 ## Calibrating the Bare Nozzle
 For machines that have very large runout in the nozzle it might be imperative that they can also runout compensate the bare nozzle e.g. to safely and smoothly load new nozzle tips. There is a simple trick in OpenPNP to do that: just create a nozzle tip that is named "unloaded". The calibration system will automatically use this stand-in whenever the bare nozzle needs to be calibrated and compensated. 
