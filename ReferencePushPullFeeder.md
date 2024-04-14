@@ -277,7 +277,7 @@ Some machines/feeders have a central or dedicated peeling axis, i.e. a motor tha
 
 To be clear: for the [3D-printed Push-Pull Feeder](https://makr.zone/new-all-3d-printed-tapereel-feeder/399/) you do not need such a separate peeler axis or motor, instead the peeling is done through lever-ratchet-clutch action.
 
-#### Peeler Axiscltch
+#### Peeler Axis
 
 Create a rotation axis for the peeler. Make sure to _disable_ the **Limit to Range** and **Wrap Around** options, as we want continuous wind-up of the peeled-off cover tape:
 
