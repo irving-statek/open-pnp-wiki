@@ -13,6 +13,7 @@
 * [I need help configuring GcodeDriver.](#i-need-help-configuring-gcodedriver)
 * [My nozzle is not turning or going up/down when I jog C or Z](#my-nozzle-is-not-turning-or-going-updown-when-i-jog-c-or-z)
 * [My nozzle moves (in Z) when the camera is moved.](#my-nozzle-moves-in-z-when-the-camera-is-moved)
+* [My camera view is too large.](#my-camera-view-is-too-large)
 * ["It would be faster to do it by hand."](#it-would-be-faster-to-do-it-by-hand)
 * [What Should I Build?](#what-should-i-build)
 * [How can I improve placement accuracy?](#how-can-i-improve-placement-accuracy)
@@ -139,6 +140,12 @@ Most likely, you have the _real_ `C` and/or `Z` axis set on the camera, instead 
 
 For very old versions of OpenPnP look here:
 See https://github.com/openpnp/openpnp/wiki/GcodeDriver#nozzle-is-moving-or-turning-when-camera-is-moved
+
+## My camera view is too large.
+
+This is a known layout inconsistency (bug). To work around, make your main window smaller until the camera view is small enough. It will then remain small, even when you make the main window larger again.
+
+Java Swing experts are welcome to help fix this. :smiley: For contributions, see the [Developers Guide](Developers-Guide).
 
 ## "It would be faster to do it by hand."
 
