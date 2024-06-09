@@ -33,12 +33,7 @@ As a further prerequisite, you also need to configure settings on each nozzle ti
 
 It is recommended to always first try to use the unchanged stock vision settings for bottom vision. 
 
-NOTE: If your configurations comes from an older version of OpenPnP, chances are that you are not already using the stock vision settings. One tell-tale is missing sliders in your Bottom Vision Settings. If these are missing, proceed with the following instructions. If they are already there, you can skip ahead to [Tuning Bottom Vision](#tuning-bottom-vision).
-
-![Sliders](https://user-images.githubusercontent.com/9963310/155244204-5df01b2c-02be-4475-92b4-4063c36e7acc.png)
-
-The following will show you how to select and use them, step by step.
-
+NOTE: If your configurations comes from an older version of OpenPnP, chances are that you are not already using the stock vision settings. The following will show you how to select and use them, step by step.
 
 ## Select Stock Vision Setting
 
