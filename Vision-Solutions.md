@@ -20,7 +20,7 @@ Preliminary camera calibration can be performed automatically by looking at a [f
 
 The fiducial must be round, high contrast, sharp and flat, i.e., with no sunken/raised "3D" structure. It must appear as a single unambiguous circular feature, even when seen from the side. Calibration will move all around the fiducial and look at it from different angles. A fiducial with "3D" depth (such as a hole) is therefore not well suited. When looked at from the side, a different edge higher up in Z will suddenly define the contour of the fiducial, it will go from circular to lenticular, and even a small depth in Z will introduce a surprisingly large error in X/Y as shown in this illustration (errors in red):
 
-![no-3d-fiducials-please](https://user-images.githubusercontent.com/9963310/218517465-aa6f931c-9bcd-4cf1-8045-03228c6b6ec1.png)
+![no-3d-fiducials-please](https://github.com/openpnp/openpnp/assets/9963310/af4d461a-54a4-4985-801a-81057105a93c)
 
 Other than these requirements, the fiducial can be anything. The recommended fiducial is just any bright 1mm diameter round mark on dark ground  (the same type is used for [[Visual Homing]]). You can simply print the linked PDF, it is recommended to use a high-quality matte photo paper or similar: 
 
