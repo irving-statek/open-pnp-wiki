@@ -224,6 +224,18 @@ Obviously the nozzle needs to be able to reach _all_ of the feeder area (and a b
 
 Ideally the camera can reach all four fiducials. However the feeder will also work if it can reach the right half of the feeder (highlighted in yellow here). This way you can exploit more of the space on your machine table. The BlindsFeeder will automatically do the right thing, if you have defined and enabled your machine [Soft Limits](https://github.com/openpnp/openpnp/wiki/Machine-Axes#kinematic-settings--axis-limits). 
 
+## OpenPnP Preparation
+
+Before you can use the feeder in the OpenPnP software, make sure to have prepared at least the following:
+
+* A good symmetric lighting solution for the top camera (e.g. LED ring around the camera, diffuser). Do not attempt to use this feeder before you have one.
+* [White Balance calibration of the top camera](https://github.com/openpnp/openpnp/wiki/Camera-White-Balance). 
+* Units per Pixel (scale) calibration of the top camera, best using [Issues & Solutions Vision Solutions](https://github.com/openpnp/openpnp/wiki/Vision-Solutions).
+* [Camera to nozzle offsets calibration using Issues & Solutions](https://github.com/openpnp/openpnp/wiki/Calibration-Solutions#calibrating-precision-camera-to-nozzle-offsets).
+* [Advance Camera Calibration](https://github.com/openpnp/openpnp/wiki/Calibration-Solutions#advanced-camera-calibration) against lens distortion and camera view axis tilt.
+
+Unlike most other top camera vision operations that only look at the center of the camera view, the BlindsFeeder vision covers a wide range of the camera view, and it is therefore very important to have the above preparation in place. 
+
 ## Feeder Setup in OpenPNP
 
 Once the feeder is mounted on the machine and loaded with tape (computer vision won't work without), we can go back to OpenPNP and the BlindsFeeder that we already added earlier (or just add a new one). 
