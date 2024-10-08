@@ -34,11 +34,21 @@ Press the ![red dot](https://user-images.githubusercontent.com/9963310/113594994
 
 ### Calibrating the Up-looking Camera Z
 
-The auto focus can help you calibrate the precise up-looking camera Z position. This will make sure your bottom vision happens at optimum distance. 
+Nowadays, the up-looking camera Z should have been automatically calibrated using Auto Focus via [[Issues and Solutions]]. 
+
+- [Watch the video](https://youtu.be/md68n_J7uto?t=214 ).
+
+To redo this, please enable the **Include Solved?** checkbox, and then **Reopen** and redo the solution.
+
+The following manual instructions are only recommended for older versions of OpenPnP, or when you know what you are doing.
 
 ___
+
 **CAUTION**: this procedure will change the subject to camera distance, which will change the scale of subjects. You will need to readjust the **Units per Pixel** after performing it. 
 ___
+
+The auto focus can help you calibrate the precise up-looking camera Z position. This will make sure your bottom vision happens at optimum distance. 
+
 
 1. Use a Z calibrated nozzle tip with no part on. 
 2. Auto focus it, using the ![red dot](https://user-images.githubusercontent.com/9963310/113594994-b42b3e80-9638-11eb-870d-f32a728bd8e8.png) button in the **Auto Focus** camera tab. . 
@@ -46,7 +56,7 @@ ___
 4. Go to the **General Configuration** tab to adjust **Units per Pixel**.
 
 
-### Part Height Auto-Learning
+## Part Height Auto-Learning
 
 Whenever Alignment (a.k.a. Bottom Vision) encounters a part with unknown part height, it will employ the auto focus. The detected part height is then stored on the part. This will take some additional time (but hardly longer than manually measuring and entering the data). All subsequent vision and placement operations will reuse the height directly, with no further speed penalty incurred. 
 
