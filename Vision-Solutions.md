@@ -46,7 +46,7 @@ For manual settings, use the spin control. On new machines/cameras, nothing is y
 
 Preliminary camera calibration also requires looking at a secondary fiducial at different height (Z level). This will provide the calibration algorithm with the needed 3D/spatial information to determine the true focal length of the lens and the optical position of the camera in space. 
 
-The secondary fiducial should be placed close to the primary fiducial (see previous section), but at a different Z level (be sure to keep it below the safe Z level). The fiducial may be out of focus, but the blur should not go all the way across. In the illustration below the middle one is still good, the right one not. As with the primary fiducial, when capturing the location of the secondary fiducial, the Z coordinate is the most critical as any error there will result is a camera scaling (units per pixel) error. 
+The secondary fiducial should be placed close to the primary fiducial (see previous section), but at a different Z level which is at least 2mm above or below the primary fiducial. Be sure to keep it below the safe Z level. The fiducial may be out of focus, but the blur should not go all the way across. In the illustration below the middle one is still good, the right one not. As with the primary fiducial, when capturing the location of the secondary fiducial, the Z coordinate is the most critical as any error there will result is a camera scaling (units per pixel) error. 
 
 ![Out of Focus](https://user-images.githubusercontent.com/9963310/118112263-0e13e680-b3e5-11eb-818b-64d157866b35.png)
 
