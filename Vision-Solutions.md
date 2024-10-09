@@ -56,7 +56,7 @@ You can print out the same fiducial as for the primary fiducial, cut it out with
 
 ## Nozzle Offsets
 
-After the calibration fiducial X, Y coordinates have been determined, we also need the Z coordinates. For this we need the nozzle tip (the very point) as the reference. Therefore, you need to load a nozzle tip to each nozzle and then perform the nozzle offset calibration solutions. 
+After the calibration fiducial X, Y coordinates have been determined, we also need the Z coordinates. Conventionally this Z position will be a negative number; see the [[Machine Axes]] page for an explanation. To capture this Z coordinate we need the nozzle tip (the very point) as the reference. Therefore, you need to load a nozzle tip to each nozzle and then perform the nozzle offset calibration solutions. 
 
 In the spirit of the holistic approach described above, this step goes both ways: The fiducial will get its Z coordinate, and the nozzle will get its approximate head offsets in X, Y (these will be [calibrated to better precision later](https://github.com/openpnp/openpnp/wiki/Calibration-Solutions#calibrating-precision-camera-to-nozzle-offsets)). 
 
