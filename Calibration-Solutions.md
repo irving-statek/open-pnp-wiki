@@ -102,7 +102,7 @@ To calibrate precision camera ↔ nozzle offsets, we let the nozzle pick, rotate
 
 Watch the [video sequence to understand how it work](https://youtu.be/md68n_J7uto?t=462). 
 
-The test object should be circular and flat on the top. The nozzle must be able to pick and place it precisely. There must be good contrast between test objects and background. As you are likely to lose or damage these little test objects, best make several. They can be as simple as punched out "confetti" from a hole punch, used on matte card stock. You can also create heavier ones made from metal sheet etc. Press them flat. Don't worry if they are not perfect, this will all be cancelled-out through circular symmetry. 
+The test object should be circular and flat on the top. The nozzle must be able to pick and place it precisely. There must be good contrast between test objects and background. The diameter should be no larger than 70% of the field of view of your camera. As you are likely to lose or damage these little test objects, best make several. They can be as simple as punched out "confetti" from a hole punch, used on matte card stock. You can also create heavier ones made from metal sheet etc. Press them flat. Don't worry if they are not perfect, this will all be cancelled-out through circular symmetry. 
 
 ![Hole Punch Confetti](https://user-images.githubusercontent.com/9963310/119668622-a1aed380-be37-11eb-97cc-a99f7220ea04.jpg)
 
