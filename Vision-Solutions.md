@@ -10,6 +10,12 @@ To get some impressions, [watch a video of these and other calibration solutions
 
 In order to perform Visual Calibration, a certain calibration rig is needed. The elements are described in the respective calibration steps. 
 
+The ideal calibration rig is mounted like a PCB - even made out of a spare PCB. This provides the best accuracy because the calibration process will be performed on a true PCB surface.
+
+Using the PCB mount facility, the rig can also be remounted later when needed for recalibration.. Don't worry about inaccurate mounting repeatability, the primary and secondary fiducials need not be precisely at their stored location X, Y, each calibration algorithm will first reacquire their precise location. Only the Z needs to be precisely the same each time.
+
+Hence these primary and secondary fiducials are not to be confused with the homing fiducial. Technically you can reuse the primary calibration fiducial as a homing fiducial if it is permanently fixed on the machine, and at PCB surface Z. But that's not the recommended way.
+
 ![Calibration rig](https://user-images.githubusercontent.com/9963310/129459527-52675532-f63c-458e-8dec-73659cffe3ab.png)
 
 # Calibration Steps
