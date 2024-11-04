@@ -62,12 +62,17 @@ Scripting Events allow you to define scripts that will be run automatically by O
 * [Camera.AfterCapture](#CameraAfterCapture): Called after an image capture.
 * [Camera.AfterSettle](#CameraAfterSettle): Called after the camera settle time.
 * [Camera.AfterPosition](#CameraAfterPosition): Called after moving the camera using the Position Camera icon.
+* [Feeder.BeforeFeed](#FeederBeforeFeed): Called before a feeder feeds a part.
+* [Feeder.AfterFeed](#FeederAfterFeed): Called after a feeder feeds a part.
+* [Feeder.BeforeTakeBack](#FeederBeforeTakeBack): Called before a feeder takes back (recycles) a part.
+* [Feeder.AfterTakeBack](#FeederAfterTakeBack): Called after a feeder takes back a part.
 * [Job.AfterDiscard](#JobAfterDiscard): Called after a part has been discarded and the nozzle has returned to safe z.
 * [Job.BeforeDiscard](#JobBeforeDiscard): Called during a discard sequence before the nozzle has moved to the discard location.
 * [Job.Finished](#JobFinished): Called when a job completes.
 * [Job.Placement.BeforeAssembly](#JobPlacementBeforeAssembly): Called before the process of handling a placement starts.
 * [Job.Placement.Complete](#JobPlacementComplete): Called after a placement is complete.
 * [Job.Starting](#JobStarting): Called before the job starts.
+* [Machine.AfterDriverHoming](#MachineAfterDriverHoming): Called after the machine drivers have been homed, and before processing OpenPnP homing fiducial. (New 2024-11-04)
 * [Machine.AfterHoming](#MachineAfterHoming): Called after the machine is homed.
 * [Nozzle.AfterPick](#NozzleAfterPick): Called after a nozzle has picked a part.
 * [Nozzle.BeforePick](#NozzleBeforePick): Called before a nozzle picks a part.
@@ -273,6 +278,54 @@ Example:
 downCamLights.actuate(true);
 ```
 
+### Feeder.BeforeFeed
+
+Called before the feeder feeds a part (New 2024-11-04).
+
+Variables:
+
+| Name  | Type | Description |
+| ------------- | ------------- | -------------- |
+| nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that will be processing the fed part. |
+| feeder  | [org.openpnp.spi.Feeder](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Feeder.html) | The feeder providing the part. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part being fed. |
+
+### Feeder.AfterFeed
+
+Called after the feeder feeds a part (New 2024-11-04).
+
+Variables:
+
+| Name  | Type | Description |
+| ------------- | ------------- | -------------- |
+| nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that will be receiving the part. |
+| feeder  | [org.openpnp.spi.Feeder](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Feeder.html) | The feeder which provided the part. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part which was fed. |
+
+### Feeder.BeforeTakeBack
+
+Called before the feeder takes back a part from a nozzle. The "take back" operation is also known as "recycle" (New 2024-11-04).
+
+Variables:
+
+| Name  | Type | Description |
+| ------------- | ------------- | -------------- |
+| nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that will be returning the part. |
+| feeder  | [org.openpnp.spi.Feeder](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Feeder.html) | The feeder receiving the part. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part being returned. |
+
+### Feeder.AfterTakeBack
+
+Called after the feeder receives a part from a nozzle (New 2024-11-04).
+
+Variables:
+
+| Name  | Type | Description |
+| ------------- | ------------- | -------------- |
+| nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that received the part. |
+| feeder  | [org.openpnp.spi.Feeder](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Feeder.html) | The feeder which returned the part. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part which was returned. |
+
 ### Vision.PartAlignment.Before
 
 Called before part alignment (bottom vision) takes place.
@@ -306,6 +359,14 @@ Variables:
 | nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that is picking. |
 | part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part being picked. |
 
+### Machine.AfterDriverHoming
+
+Called after the machine drivers have been homed, and before processing the OpenPnP homing fiducial. (New 2024-11-04)
+
+### Machine.AfterHoming
+
+Called after the machine has been homed.
+
 ### Nozzle.AfterPick
 
 Called after the nozzle has picked a component.
@@ -326,6 +387,7 @@ Variables:
 | Name  | Type | Description |
 | ------------- | ------------- | -------------- |
 | nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that is placing. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part being placed. (New 2024-11-04) |
 
 ### Nozzle.AfterPlace
 
@@ -336,6 +398,7 @@ Variables:
 | Name  | Type | Description |
 | ------------- | ------------- | -------------- |
 | nozzle  | [org.openpnp.spi.Nozzle](http://openpnp.github.io/openpnp/develop/org/openpnp/spi/Nozzle.html) | The nozzle that is placing. |
+| part  | [org.openpnp.model.Part](http://openpnp.github.io/openpnp/develop/org/openpnp/model/Part.html) | The part being placed. (New 2024-11-04) |
 
 ### NozzleCalibration.Starting
 
